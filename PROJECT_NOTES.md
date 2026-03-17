@@ -315,3 +315,20 @@ No feature ships to `main` unless:
 - Drafted data model entity relationships spanning all features
 - **Key finding:** The n8n + LangGraph combo is well-validated in the community for job automation. Multiple real users have built end-to-end pipelines.
 - **Next:** Review landscape doc together, refine priorities, then start building Phase 1 module stubs
+
+### 2026-03-17 — Scope Gap Analysis & Crawlee Discovery (Session 3)
+
+- Created comprehensive OPEN_QUESTIONS.md with 16 tracked items (OQ-1 through OQ-16)
+- Identified 5 BLOCKING gaps: user profile model, data model/schema, master resume strategy, integration architecture, ethical/legal boundaries
+- Identified 3 HIGH gaps: deployment topology, multi-role pipeline, handoff UX
+- Identified 4 MEDIUM gaps: feedback loop, inbound comms tracking, cover letters, OpenClaw reuse
+- Identified 4 LOW gaps: salary intelligence, interview prep, rate limiting strategy, GDPR
+- **Key discovery: Crawlee for Python (Apify, Apache-2, 20k+ stars)**
+  - Crawlee provides request queue, auto-scaling, proxy rotation, session management, dataset storage, fingerprint generation, error handling, and official Camoufox integration
+  - Eliminates need to build custom `browser_hand.py`, request queue, proxy rotation, session manager, and data export pipeline
+  - Estimated scope reduction: ~500-800 lines of custom plumbing reduced to ~100-200 lines of extraction logic
+  - Updated FEATURE_LANDSCAPE.md §9 with Crawlee architecture, comparison tables, and revised build-vs-integrate decisions
+  - Crawlee can run standalone (our MVP plan) or deploy to Apify cloud later without code changes
+- Updated OPEN_QUESTIONS.md OQ-4 to reflect Crawlee's impact on integration architecture
+- **Key insight:** Crawlee + Camoufox plugin is the exact combination shown in the Apify template — this is a well-trodden path, not experimental
+- **Next:** Resolve blocking OQs (user profile, data model, master resume) before building
