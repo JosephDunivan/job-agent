@@ -162,17 +162,28 @@ Most existing job agents are **apply bots** — they spam applications. Our syst
 
 ---
 
-## 6. Next Steps
+## 6. Decisions Made (2026-03-17)
 
-- [ ] Finalize Phase 1 scope (answer the open questions in §2.3)
-- [ ] Choose orchestration layer (n8n vs LangGraph vs custom)
-- [ ] Set up the GitHub repo with this document
-- [ ] Create initial project structure (even if mostly empty)
-- [ ] Start with the simplest useful feature (likely: resume tailoring + job matching)
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| **MVP Focus** | Balanced — resume tailoring + job matching + basic OSINT + dashboard | Get useful output fast without being just another apply bot |
+| **Budget** | ~$50/mo | Comfortable for small VPS (n8n, services) + minimal API. Ollama local for heavy LLM work |
+| **Target Roles** | User will specify per search | System should be flexible enough for dev, audit, and freelance |
+| **Orchestration** | Flexible / best tool per job | No single orchestration lock-in. Use n8n where visual workflows help, LangGraph where code-native agents make sense, Ollama for local LLM tasks, simple Python scripts where that's sufficient |
+
+## 7. Next Steps
+
+- [x] Finalize Phase 1 scope
+- [x] Set up the GitHub repo with this document
+- [ ] Define data models (jobs, applications, contacts, companies, skills)
+- [ ] Create initial project structure with module stubs
+- [ ] Set up local dev environment (Docker Compose for services)
+- [ ] Build first feature: resume tailoring engine (Ollama + MD→PDF pipeline)
+- [ ] Build second feature: job discovery + matching
 
 ---
 
-## 7. Session Log
+## 8. Session Log
 
 ### 2026-03-17 — Initial Scoping Session
 
@@ -184,3 +195,4 @@ Most existing job agents are **apply bots** — they spam applications. Our syst
 - Proposed 3-phase approach: MVP → automation → full autonomous pipeline
 - Created this PROJECT_NOTES.md as living document
 - **Open:** Need to answer scoping questions before architecture decisions
+- **Resolved:** MVP = balanced (resume tailoring + job matching + basic OSINT + dashboard). Budget ~$50/mo. Orchestration = flexible, best tool per job. No single lock-in.
