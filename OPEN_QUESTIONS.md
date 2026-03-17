@@ -296,16 +296,34 @@ PHASE 2+ (revisit after MVP):
 | **C: All remote** (VPS for everything) | Always-on, clean separation | Ollama on a VPS = slow (no GPU) or expensive (GPU VPS), higher cost |
 | **D: Hybrid with Tailscale/WireGuard** | Best of both: local Ollama + remote services connected via VPN | Setup complexity, depends on local machine uptime for LLM tasks |
 
+**Compute Options (for VPS / on-demand workloads):**
+
+| Provider | Spec | Cost | Best For |
+|----------|------|------|----------|
+| **Docker (local)** | Uses host resources | $0 | Phase 1 default — SpiderFoot, Crawlee workers, n8n all containerized alongside Ollama |
+| **Hetzner Cloud CX22** | 2 vCPU, 4GB RAM, 40GB SSD | ~$4.50/mo (hourly billing) | Best price/performance for a dedicated VPS — handles n8n + SpiderFoot + browser automation |
+| **Oracle Cloud Free Tier** | 4 ARM vCPU, 24GB RAM | $0 (always-free) | Incredible specs at zero cost — ARM requires verifying tool compatibility (SpiderFoot, Camoufox) |
+| **Fly.io Machines** | On-demand, configurable | ~$0.003/hr (pay-per-second) | True ephemeral compute — spin up for OSINT scan, tear down after. Cheapest for infrequent workloads |
+| **DigitalOcean Droplet** | 1 vCPU, 1GB RAM | ~$6/mo | Solid fallback, good API, slightly pricier than Hetzner |
+
 **Additional considerations:**
 - Camoufox on a VPS needs Xvfb (virtual display) for headed mode — 83% bypass headless, ~100% bypass headed
 - n8n self-hosted needs 1-2GB RAM minimum
 - Dashboard (Next.js) could be static export on Vercel (free) or VPS-hosted
 - SQLite is a single file — works great locally, problematic for multi-service remote access
+- SpiderFoot has an official Docker image — easiest path to local or remote deployment
+- Oracle free tier ARM instances need compatibility testing but the 24GB RAM is unbeatable at $0
+
+**Recommended phased approach:**
+1. **Phase 1:** All local via Docker (Ollama + SpiderFoot + Crawlee + n8n in containers). Zero cost, fastest iteration.
+2. **Phase 2:** Hybrid — Ollama stays local, move n8n + browser workers to Hetzner CX22 ($4.50/mo) or Oracle free tier for always-on scheduling.
+3. **Phase 2+:** Fly.io Machines for on-demand OSINT scans if scan frequency is low (cheaper than a persistent VPS).
 
 **Decision needed from Joseph:**
 1. Do you have a preference? Your local machine has Ollama already.
 2. Do you need the dashboard accessible from your phone/other devices?
 3. How important is "always-on" (scheduled job checks even when your machine is off)?
+4. Are you open to Oracle Cloud free tier (requires sign-up, ARM compatibility testing)?
 
 ---
 
