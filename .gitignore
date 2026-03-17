@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (keep structure, ignore generated data)
+data/benchmarks/*.db
+data/benchmarks/*.csv
+!data/benchmarks/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
