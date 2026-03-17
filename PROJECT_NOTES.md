@@ -171,7 +171,112 @@ Most existing job agents are **apply bots** — they spam applications. Our syst
 | **Target Roles** | User will specify per search | System should be flexible enough for dev, audit, and freelance |
 | **Orchestration** | Flexible / best tool per job | No single orchestration lock-in. Use n8n where visual workflows help, LangGraph where code-native agents make sense, Ollama for local LLM tasks, simple Python scripts where that's sufficient |
 
-## 7. Next Steps
+## 7. Testing Strategy
+
+Our testing approach follows the same philosophy you used in your SOX audit work and automation projects: define expected outcomes, simulate realistic scenarios (both valid and invalid), capture evidence, and validate that every component behaves correctly under real-world conditions.
+
+### 7.1 Testing Principles
+
+1. **Simulated data first** — Every module gets a set of synthetic test fixtures (fake job postings, fake resumes, fake company profiles) before touching real data. This lets us iterate fast without side effects.
+2. **Happy + unhappy paths** — For each feature, test what should work AND what should fail/degrade gracefully (bad input, API down, rate limited, no results found).
+3. **Audit trail on everything** — Every action the agent takes gets logged with timestamp, input, output, and outcome. This is both a testing aid and a core product feature.
+4. **Human-in-the-loop checkpoints** — Before any external action (submitting an application, sending a message), the system pauses for review. Tests validate that this gate works.
+5. **Regression via fixtures** — Save real-world inputs that caused bugs as permanent test fixtures so they never regress.
+
+### 7.2 Testing by Module
+
+#### Resume Tailoring Engine
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| Resume parsing (MD → structured data) | Unit tests with 5+ resume variants (different formats, lengths, missing sections) | All key fields extracted correctly |
+| JD parsing (extract requirements, skills, keywords) | Unit tests with 10+ real job descriptions across dev/audit/freelance | Skills, requirements, and seniority level correctly identified |
+| Alignment quality | LLM-as-judge evaluation: feed original resume + JD + tailored resume to a second LLM, score on relevance, accuracy, no hallucinated experience | Score ≥ 8/10 on relevance; zero hallucinated credentials |
+| ATS compatibility | Run output through open-source ATS simulators or parsers (e.g., pyresparser) | All key fields parse correctly; no formatting artifacts |
+| Markdown → PDF rendering | Visual regression tests: render 10 tailored resumes, screenshot, diff against baseline | No broken layouts, truncated text, or missing sections |
+| Edge cases | Empty resume, resume with no matching skills, JD in another language, extremely long JD | Graceful degradation with clear error messages |
+
+#### Job Discovery & Matching
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| Board fetching | Integration tests against each source (with mocked HTTP responses for CI, live for manual) | Returns structured job objects with title, company, location, JD, URL |
+| Deduplication | Feed identical jobs from multiple boards | No duplicates in output |
+| Match scoring | Score 50 test jobs (manually labeled as good/bad fit) against a fixed profile | Precision ≥ 80%, recall ≥ 70% on "good fit" label |
+| Filtering (location, salary, remote, seniority) | Unit tests with 20 jobs spanning all filter dimensions | Filters correctly applied, edge cases (missing salary, ambiguous location) handled |
+| Rate limiting / anti-bot | Simulate blocked responses, CAPTCHAs, 429s | System backs off, logs the event, retries with delay, never crashes |
+
+#### OSINT / People Intelligence
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| Company lookup | Query 10 known companies, verify returned data (size, industry, key people) | Core facts match public records |
+| People search | Query 5 known professionals, verify profiles found | Correct person identified with ≥ 3 data points |
+| Relationship mapping | Feed a known network (e.g., 3 companies with overlapping employees) | Graph correctly shows connections |
+| Privacy / ethical boundaries | Attempt to query sensitive data (SSN-like patterns, private records) | System refuses with clear explanation |
+| SpiderFoot integration | Run 3 scans (domain, email, company name), validate structured output | Results parse into our data model without errors |
+| False positive rate | Review 20 OSINT results manually | < 20% false positives (wrong person, stale data) |
+
+#### Dashboard & Pipeline Tracking
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| Application status transitions | Unit tests: move a job through every valid state (discovered → applied → interviewing → offer → rejected) | All transitions work; invalid transitions blocked |
+| Data integrity | Create 100 test applications, verify counts, filters, and aggregations on dashboard | Numbers match, no orphaned records |
+| Task/deadline management | Create tasks with due dates in past, today, future | Correct sorting, overdue flagging, notification triggers |
+| Concurrent operations | Simulate 5 simultaneous updates to different applications | No data corruption or race conditions |
+
+#### LLM Layer (Ollama)
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| Model availability | Health check: is Ollama running, is the expected model loaded | Returns model info within 5 seconds |
+| Response quality | Run 20 standardized prompts (cover letter, skill gap, resume bullet rewrite), evaluate outputs | Coherent, relevant, no hallucinations, correct tone |
+| Fallback behavior | Kill Ollama mid-request; test with wrong model name | Graceful error, retry logic, user notification |
+| Token/cost tracking | Log token counts for 50 operations | Accurate counts; average cost per operation calculated |
+| Prompt versioning | Change a prompt template, verify output changes | Old fixtures still produce acceptable output; new prompt logged with version |
+
+#### Orchestration & Integration
+
+| What to Test | Method | Pass Criteria |
+|-------------|--------|---------------|
+| End-to-end pipeline | Feed 1 real job URL → system discovers, parses, scores, tailors resume, creates dashboard entry | All steps complete; output is reviewable |
+| Partial failure recovery | Kill a service mid-pipeline (e.g., Ollama dies during tailoring) | Pipeline pauses, logs error, resumes when service returns |
+| Data flow between modules | Trace a job from discovery → OSINT → matching → tailoring | Data model consistent at every handoff point |
+| Configuration changes | Change target role, location filters, model name | System picks up new config without restart |
+
+### 7.3 Test Infrastructure
+
+| Layer | Tool | Purpose |
+|-------|------|---------|
+| Unit tests | pytest | Core logic: parsers, scorers, data transforms |
+| Integration tests | pytest + Docker Compose | Multi-service: DB + LLM + OSINT working together |
+| LLM evaluation | Custom eval harness (LLM-as-judge) | Quality of generated content (resumes, cover letters, analysis) |
+| Visual regression | Playwright + screenshot diffing | Dashboard UI and rendered PDF output |
+| Load / stress | locust or custom scripts | How the system behaves under 100+ concurrent jobs |
+| CI/CD | GitHub Actions | Run unit + integration tests on every push |
+| Fixtures | `/tests/fixtures/` directory | Synthetic resumes, JDs, company profiles, OSINT results |
+| Test data generator | Python script using Faker + LLM | Generate realistic but synthetic test data at scale |
+
+### 7.4 Quality Gates
+
+No feature ships to `main` unless:
+
+1. All unit tests pass
+2. Integration tests pass against Docker Compose test environment
+3. LLM output quality score ≥ threshold for affected prompts
+4. No regressions in existing fixture tests
+5. Manual review of 3 sample outputs for any LLM-touching feature
+
+### 7.5 Testing Phases (aligned with build phases)
+
+- **Phase 1 (MVP):** Unit tests + fixtures + basic integration tests. Manual QA on LLM outputs. GitHub Actions CI for unit tests.
+- **Phase 2 (Automation):** Add Playwright for browser automation tests. LLM-as-judge eval harness. Visual regression for dashboard.
+- **Phase 3 (Full Pipeline):** End-to-end pipeline tests. Stress testing. Monitoring and alerting for production runs.
+
+---
+
+## 8. Next Steps
 
 - [x] Finalize Phase 1 scope
 - [x] Set up the GitHub repo with this document
@@ -183,7 +288,7 @@ Most existing job agents are **apply bots** — they spam applications. Our syst
 
 ---
 
-## 8. Session Log
+## 9. Session Log
 
 ### 2026-03-17 — Initial Scoping Session
 
@@ -196,3 +301,4 @@ Most existing job agents are **apply bots** — they spam applications. Our syst
 - Created this PROJECT_NOTES.md as living document
 - **Open:** Need to answer scoping questions before architecture decisions
 - **Resolved:** MVP = balanced (resume tailoring + job matching + basic OSINT + dashboard). Budget ~$50/mo. Orchestration = flexible, best tool per job. No single lock-in.
+- Added comprehensive testing strategy (§7) covering all modules, test infrastructure, quality gates, and phased rollout
