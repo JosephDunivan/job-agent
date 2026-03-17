@@ -380,6 +380,129 @@ Track freelance gigs, manage contracts, generate invoices, log time, and manage 
 
 ---
 
+## Feature 9: Browser Automation ("The Hand")
+
+### What It Does
+A stealth browser automation layer that can navigate websites, fill forms, click buttons, extract data, and submit applications — while avoiding bot detection. This is the foundational capability that powers job application submission (Phase 2), OSINT data collection, job board scraping fallback, and any interaction with websites that lack APIs.
+
+### Tool Landscape
+
+| Tool | Engine | Stealth Approach | Bypass Rate | Python | License | Stars | Key Trade-off |
+|------|--------|-----------------|-------------|--------|---------|-------|---------------|
+| **Camoufox** | Firefox (modified) | C++ level fingerprint spoofing, no JS injection. Spoofs canvas, WebGL, fonts, navigator, WebRTC at engine level. Built-in humanized mouse movement. | ~83% (headed ~100%) | Yes (Playwright API) | Open source | 4k+ | Best stealth scores; higher memory; Firefox only |
+| **Nodriver** | Chrome/Chromium | No WebDriver, no Selenium, no CDP artifacts. Direct Chrome communication. Fresh profile each run. | ~100% headed, ~17% headless | Yes (async native) | MIT | 3k+ | Best headed bypass; headless mode weak; Chrome only |
+| **Patchright** | Chromium (patched Playwright) | Patches CDP leaks (Runtime.enable, addBinding). Drop-in Playwright replacement — change one import. | ~50% headed, ~33% headless | Yes (Playwright API) | MIT | 2k+ | Easiest migration from Playwright; moderate stealth |
+| **Botasaurus** | Chrome (custom) | Full framework: anti-detect driver + requests. SSL proxy support, caching, parallelization, debug-on-crash. | High (claimed best) | Yes (native) | MIT | 3.9k | All-in-one framework; more opinionated; heavier |
+| **rebrowser-patches** | Chromium (patched) | Patches Playwright/Puppeteer CDP leaks. Available as drop-in `rebrowser-playwright` Python package. | ~similar to Patchright | Yes | MIT | 1.1k | Community patches; less standalone |
+| **SeleniumBase UC Mode** | Chrome (patched) | Undetected ChromeDriver mode built into SeleniumBase testing framework. | Moderate | Yes | MIT | 8k+ | Good if already using Selenium; legacy approach |
+| **Playwright** (vanilla) | Chromium/FF/WebKit | No stealth. Standard automation. Multi-browser support. Best docs and ecosystem. | ~20% (easily detected) | Yes | Apache-2 | 70k+ | Best API/docs; zero stealth without patches |
+| **Selenium** (vanilla) | Any browser | No stealth. Mature ecosystem. Largest community. | ~10% (trivially detected) | Yes | Apache-2 | 32k+ | Legacy; easily detected; still works for own sites |
+
+### Benchmark Data (Independent Testing)
+
+From the [browsers-benchmark](https://github.com/techinz/browsers-benchmark) project (tests against Cloudflare, DataDome, etc.):
+
+| Engine | Overall Bypass Rate | Headless Detection | reCAPTCHA Score |
+|--------|--------------------|--------------------|----------------|
+| nodriver (headed) | 100% | 0% (undetected) | — |
+| camoufox (headed) | 83.3% | 0% (undetected) | 0.10 |
+| camoufox (headless) | 83.3% | 0% (undetected) | 0.10 |
+| patchright (headed) | 50% | — | 0.10 |
+| playwright-stealth-firefox | 66.7% | — | — |
+| vanilla Playwright | 33.3% | 100% (fully detected) | — |
+| nodriver (headless) | 16.7% | — | — |
+
+Key insight: **Nodriver dominates in headed mode but collapses in headless. Camoufox is the only tool with strong headless stealth.** For a server-side agent that runs unattended, headless capability matters.
+
+### CreepJS Fingerprint Scores (Lower = Better)
+
+From [ScrapingBee testing](https://www.scrapingbee.com/blog/creepjs-browser-fingerprinting/):
+
+| Tool | Like Headless | Headless Score | Stealth Score |
+|------|--------------|----------------|---------------|
+| Camoufox (headful + virtual display) | 0% | 0% | 0% |
+| Camoufox (headless) | 6% | 0% | 0% |
+| Nodriver (headful + virtual display) | 44% | 0% | 0% |
+| Nodriver (headless) | 44% | 67% | 0% |
+| Patchright | — | 67% | 0% |
+| Vanilla Playwright | — | 100% | 0% |
+
+### Recommended Approach: Layered Strategy
+
+Rather than picking one tool, we build an abstraction layer that selects the right browser engine per task. This fits our "best tool for the job" philosophy.
+
+**Layer 1 — `browser_hand.py` abstraction:**
+```python
+class BrowserHand:
+    """Unified interface for stealth browser automation."""
+    
+    async def get_browser(self, stealth_level: str = "standard"):
+        """Return appropriate browser based on stealth requirements.
+        
+        stealth_level:
+          - "none": Vanilla Playwright (own sites, testing)
+          - "standard": Nodriver or Patchright (moderate protection)
+          - "max": Camoufox (heavy anti-bot, headless servers)
+        """
+```
+
+**Layer 2 — Engine selection by use case:**
+
+| Use Case | Stealth Needed | Recommended Engine | Why |
+|----------|---------------|-------------------|-----|
+| Job board scraping (fallback when JobSpy blocked) | High | **Camoufox** | Headless server, anti-bot protection on LinkedIn/Indeed |
+| Application form filling | High | **Camoufox** | Need to look fully human, form interactions |
+| OSINT data collection | Medium | **Nodriver** | Fast async, multiple tabs, moderate protection |
+| Company career page scraping | Low-Medium | **Patchright** | Greenhouse/Lever pages, lighter protection |
+| Dashboard screenshot/PDF export | None | **Vanilla Playwright** | Our own app, no detection needed |
+| Testing / CI | None | **Vanilla Playwright** | Standard testing infrastructure |
+
+**Layer 3 — Supporting infrastructure:**
+- Proxy rotation (residential proxies for heavy-protection sites)
+- Cookie persistence (save/load sessions to avoid re-auth)
+- Rate limiting (respect site limits, configurable delays)
+- Human-like behavior (random delays, scroll patterns, mouse movement — Camoufox has this built in)
+- Screenshot + HAR logging (audit trail for every browser action)
+- Virtual display (Xvfb) for headed mode on headless servers
+
+### Build vs. Integrate
+
+| Component | Approach |
+|-----------|----------|
+| Browser abstraction layer | **Build** — `browser_hand.py` with unified API |
+| Stealth engine: heavy | **Integrate** — Camoufox (Playwright-compatible API) |
+| Stealth engine: medium | **Integrate** — Nodriver (async, zero-dep) |
+| Stealth engine: light | **Integrate** — Patchright (Playwright drop-in) |
+| Standard automation | **Integrate** — Vanilla Playwright |
+| Proxy management | **Build** — rotation logic + proxy pool config |
+| Cookie/session manager | **Build** — save/load to SQLite |
+| Action logging | **Build** — extends existing token_tracker pattern |
+| Virtual display (server) | **Integrate** — Xvfb / xvfb-run |
+| Human behavior simulation | **Integrate** — Camoufox built-in `humanize` param |
+
+### Installation Requirements
+
+```bash
+# Core engines
+pip install camoufox playwright patchright nodriver
+
+# Camoufox needs its custom Firefox binary
+python -m camoufox fetch
+
+# Playwright needs browser binaries
+playwright install chromium
+
+# Patchright needs its patched Chromium
+patchright install chromium
+
+# For headless servers (virtual display)
+sudo apt install -y xvfb libgtk-3-0 libx11-xcb1 libasound2
+```
+
+### Phase: 1 (basic abstraction + Camoufox/Nodriver), 2 (form filling + application submission), 3 (full autonomous pipeline)
+
+---
+
 ## Orchestration Strategy
 
 Our system intentionally avoids single-orchestrator lock-in. Here's how each tool fits:
@@ -471,6 +594,7 @@ These are the core entities that span all features:
 | Dashboard Analytics | 2 | Medium | Medium | Next.js, Recharts |
 | Portfolio Generation | 3 | Medium | Low | Cookiecutter, GitHub API, Astro |
 | Freelance Management | 3 | Low | Low | Invoice Ninja |
+| Browser Automation ("Hand") | 1 (infra) | Medium | Critical | Camoufox, Nodriver, Patchright |
 | Full Autonomous Pipeline | 3 | High | High | n8n + LangGraph + browser automation |
 
 ---
@@ -488,6 +612,15 @@ These are the core entities that span all features:
 
 ## References
 
+- [Camoufox on GitHub](https://github.com/daijro/camoufox)
+- [Nodriver on GitHub](https://github.com/ultrafunkamsterdam/nodriver)
+- [Patchright on GitHub](https://github.com/AirtestProject/patchright) 
+- [rebrowser-patches on GitHub](https://github.com/rebrowser/rebrowser-patches)
+- [Botasaurus on GitHub](https://github.com/omkarcloud/botasaurus)
+- [Browser Automation Benchmark](https://github.com/techinz/browsers-benchmark)
+- [AI Browser Automation Guide 2026](https://proxies.sx/blog/ai-browser-automation-camoufox-nodriver-2026)
+- [Patchright Alternatives Comparison](https://roundproxies.com/blog/best-patchright-alternatives/)
+- [CreepJS Bypass Guide](https://www.scrapingbee.com/blog/creepjs-browser-fingerprinting/)
 - [JobSpy on GitHub](https://github.com/speedyapply/JobSpy)
 - [CrossLinked on GitHub](https://github.com/m8sec/CrossLinked)
 - [SpiderFoot on GitHub](https://github.com/smicallef/spiderfoot)
