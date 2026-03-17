@@ -302,3 +302,16 @@ No feature ships to `main` unless:
 - **Open:** Need to answer scoping questions before architecture decisions
 - **Resolved:** MVP = balanced (resume tailoring + job matching + basic OSINT + dashboard). Budget ~$50/mo. Orchestration = flexible, best tool per job. No single lock-in.
 - Added comprehensive testing strategy (§7) covering all modules, test infrastructure, quality gates, and phased rollout
+
+### 2026-03-17 — Feature Landscape Research (Session 2)
+
+- Researched tool landscape across all 8 planned feature areas
+- Identified key OSS tools: JobSpy (job scraping), CrossLinked/SpiderFoot (OSINT), OpenResume/ATS-Scorer (resume), Pandoc+WeasyPrint (rendering), Invoice Ninja (freelance), Plane (project mgmt reference)
+- Researched orchestration patterns: n8n has pre-built job application pipeline templates, LangGraph provides agent workflow patterns (orchestrator-worker, evaluator loops)
+- Investigated skill ontology approaches: O*NET public taxonomy, skills graph from IEEE research, PathPilot ML recommendation system
+- Found active community building n8n job automation workflows (51-node pipeline example on Reddit with CV-as-code approach)
+- Created comprehensive FEATURE_LANDSCAPE.md mapping all features → tools → build/integrate decisions → phasing
+- Cost model estimate: $15–35/mo (well under $50/mo budget)
+- Drafted data model entity relationships spanning all features
+- **Key finding:** The n8n + LangGraph combo is well-validated in the community for job automation. Multiple real users have built end-to-end pipelines.
+- **Next:** Review landscape doc together, refine priorities, then start building Phase 1 module stubs
