@@ -1035,6 +1035,473 @@ skills:
       - "Edgefactory — AR photo experience (iPad network + Snapchat geofencing + printers + display TVs)"
       - "DRC-Resume — A/V and Theatrical Technologies (explicit skill)"
 
+  # --- Inferred Business & Entrepreneurial Skills ---
+  # Capabilities demonstrated through founding/operating Taurus Design Labs,
+  # managing client portfolios, and running business operations across 8+ years.
+
+  - name: "Entrepreneurship & Business Development"
+    onet_category: "knowledge"
+    onet_match: "Administration and Management"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Founded and grew Taurus Design Labs from sole contractor to company principal over 8+ years. Transitioned from independent contractor to business owner. Handles sales, marketing, client acquisition, and accounting — a full entrepreneurial lifecycle."
+    evidence:
+      - "Taurus Design Labs — founded 2017, self-employed, all client engagements executed through the company"
+      - "Managed complete business operations: sales, marketing, customer management, accounting"
+      - "B2B client portfolio spanning healthcare, nonprofit, retail, pharma, and government verticals"
+
+  - name: "Client Engagement Lifecycle Management"
+    onet_category: "work_activity"
+    onet_match: "Communicating with People Outside the Organization"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Led full client lifecycle across all Taurus projects: scoping, requirements gathering, architecture design, vendor coordination, timeline management, progress updates, and delivery. Also managed Fortune 500 client relationships at Edgefactory."
+    evidence:
+      - "Taurus Design Labs — full engagement lifecycle: scoping, requirements, architecture, vendor coordination, delivery"
+      - "Edgefactory — Fortune 500 client management (Genentech biooncology)"
+      - "Compass Health — executive stakeholder partnership for automation prioritization"
+      - "Weekly stand-ups with FL Indian River Groves clients and backend service providers"
+
+  - name: "Revenue Generation & Monetization"
+    onet_category: "work_activity"
+    onet_match: "Selling or Influencing Others"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Created revenue-generating innovations beyond scope: $10K AR experience at Edgefactory was conceptualized and executed on-site. Taurus Design Labs is a revenue-generating business. SpeedRead is a self-initiated product."
+    evidence:
+      - "Edgefactory — AR photo experience generated $10K revenue (self-initiated)"
+      - "Taurus Design Labs — self-sustaining consultancy across multiple verticals"
+      - "SpeedRead — personal product (RSVP reader, 2018-present)"
+
+  - name: "Accounting & Financial Tracking"
+    onet_category: "knowledge"
+    onet_match: "Economics and Accounting"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Engineered Excel-based financial tracking system for company-wide reporting at Edgefactory. Manages own business accounting at Taurus Design Labs. Controlled budgets exceeding $1M."
+    evidence:
+      - "Edgefactory — engineered comprehensive financial tracking system in Excel"
+      - "Taurus Design Labs — business operations including accounting"
+      - "Edgefactory — $1M+ budget management and vendor cost control"
+
+  - name: "Proposal Writing & Project Scoping"
+    onet_category: "work_activity"
+    onet_match: "Documenting/Recording Information"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "As a consultancy owner, all client engagements require scoping, estimating, and proposing work. Multiple resume variants show explicit emphasis on project scoping, timeline management, and requirements gathering."
+    evidence:
+      - "Taurus Design Labs — managed project scoping, timeline management, progress updates"
+      - "Multiple client engagements across verticals requiring proposals and SOWs"
+      - "Compass Health — identified and prioritized use cases ranked by operational risk and volume"
+
+  # --- Inferred Technical Architecture & Problem-Solving ---
+
+  - name: "Systems Integration Architecture"
+    onet_category: "skill"
+    onet_match: "Systems Evaluation"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Repeatedly connected disparate systems: React apps to Azure SQL via PHP APIs, DocuSign to healthcare systems, ODBC real-time sync, Snapchat geofencing + iPad network + printers + display TVs, GSS to Skywalker across Shadow DOM layers. This is a pattern of systems integration thinking."
+    evidence:
+      - "FL Indian River Groves — ODBC connections for real-time data source integration"
+      - "Edgefactory — AR experience integrating iPads, Snapchat geofencing, printers, display TVs"
+      - "Disney — GSS-to-Skywalker bridging multiple UI layers and systems"
+      - "Taurus Design Labs — PHP APIs connecting React to Azure SQL + Twilio + cloud services"
+
+  - name: "Reverse Engineering & System Analysis"
+    onet_category: "skill"
+    onet_match: "Systems Analysis"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "The GSS-to-Skywalker project required reverse-engineering Disney's proprietary Cast systems — Shadow DOM traversal, async rendering analysis, framework-aware value injection — all in a browser-restricted environment where no dev tools or extensions were available. This is advanced reverse engineering."
+    evidence:
+      - "Disney — reverse-engineered GSS and Skywalker UI layers without dev tools or extensions"
+      - "Shadow DOM traversal, async rendering management, framework-aware value injection"
+      - "Deep system analysis to map integration points, dependencies, and operational improvements"
+
+  - name: "Constraint-Driven Innovation"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Consistently delivers creative solutions under severe constraints: bookmarklet in browser-restricted environment, 70% cost reduction via fabric columns vs. large format printing, pandemic pivot from physical to virtual expo maintaining 90% engagement, on-site AR experience conceptualized and executed in real-time."
+    evidence:
+      - "Disney — bookmarklet solution where browser extensions are forbidden"
+      - "Edgefactory — fabric columns reducing costs 70% vs. traditional methods"
+      - "Ascendis Pharma — pandemic pivot maintaining 90% engagement metrics"
+      - "Edgefactory — AR experience conceptualized and executed on-site"
+
+  - name: "Performance Optimization & Benchmarking"
+    onet_category: "work_activity"
+    onet_match: "Analyzing Data or Information"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Built token optimization benchmarks achieving 60.4% input savings (Job Agent). Reduced CI/CD deployment time by 1400% (FL Indian River Groves). Measured engagement metrics across multiple projects. SpeedRead project is literally about reading speed optimization."
+    evidence:
+      - "Job Agent — token optimization benchmarks (60.4% input savings, 9/9 pass)"
+      - "FL Indian River Groves — CI/CD pipeline reducing deployment time 1400%"
+      - "SpeedRead — RSVP reader increasing reading speed from 60 to 400+ wpm"
+      - "Ascendis Pharma — maintained 90% engagement metrics through pivot"
+
+  - name: "Data Sanitization & Validation"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "GSS-to-Skywalker required pulling and sanitizing guest data (PII) before injection. DocuSign workflows reduced document errors through validated, error-resistant workflows. Compliance processing demands rigorous data validation."
+    evidence:
+      - "Disney — pulls and sanitizes guest data (name, email, reservation number)"
+      - "Compass Health — validated, error-resistant workflows reducing defect rates"
+      - "Disney — manages confidential PII across 60+ daily interactions"
+
+  - name: "Offline-First & Progressive Web App Architecture"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Built service workers for offline capability at Ascendis Pharma. Expo OTA updates via EAS for the charity app. These demonstrate understanding of offline-first patterns, caching strategies, and resilient application design."
+    evidence:
+      - "Ascendis Pharma — service workers for offline capability"
+      - "Charity App — OTA updates via Expo EAS (resilient update delivery)"
+      - "Multiple PWAs built across Taurus Design Labs engagements"
+
+  # --- Inferred Soft Skills & Leadership ---
+
+  - name: "Self-Directed Initiative & Intrapreneurship"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Repeatedly identifies problems and builds solutions without being asked: GSS-to-Skywalker was a 'self-directed initiative,' the AR experience was 'conceptualized and executed on-site,' the Excel financial system was a 'self-directed improvement that expanded scope,' and the fabric column innovation was unsolicited."
+    evidence:
+      - "Disney — GSS-to-Skywalker described as 'fully automated as a self-directed initiative'"
+      - "Edgefactory — AR experience and financial system both 'self-directed improvements'"
+      - "Edgefactory — fabric column design was an unsolicited innovation"
+      - "Job Agent — self-initiated project to solve own job search problem"
+
+  - name: "Cross-Functional Team Leadership"
+    onet_category: "skill"
+    onet_match: "Coordination"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Led teams of 60+ at Edgefactory including union labor. Coordinated A/V vendors worldwide. Managed cross-functional teams at Taurus Design Labs aligned to client operational priorities. These span technical, creative, and logistics personnel."
+    evidence:
+      - "Edgefactory — 60+ person teams including union labor crews"
+      - "Edgefactory — worldwide A/V vendor coordination"
+      - "Taurus Design Labs — cross-functional teams aligned to client priorities"
+      - "FL Indian River Groves — weekly stand-ups with clients and third-party providers"
+
+  - name: "Crisis Adaptation & Pivoting"
+    onet_category: "work_activity"
+    onet_match: "Making Decisions and Solving Problems"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Pivoted Ascendis Pharma from physical to virtual expo during pandemic maintaining 90% engagement. Santa Monica Seafood adapted to multi-platform streaming. Edgefactory required real-time problem solving across multiple venues. Resume explicitly lists 'Adaptability' as a specialty."
+    evidence:
+      - "Ascendis Pharma — pandemic pivot from physical to 3D virtual expo platform"
+      - "Santa Monica Seafood — coordinated seamless transitions between streaming platforms"
+      - "Edgefactory — technical troubleshooting and on-the-spot problem solving across venues"
+      - "Dunivan-Tech-Resume — 'Proven ability to navigate changing circumstances'"
+
+  - name: "Empathetic Communication & Active Listening"
+    onet_category: "skill"
+    onet_match: "Active Listening"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "DRC-Resume explicitly lists 'Empathic Listener' as a practical skill. Manages 60+ daily guest interactions at Disney with PII sensitivity. Collaborated with legal and scientific experts at Ascendis Pharma requiring translation between domains."
+    evidence:
+      - "DRC-Resume — 'Empathic Listener' listed as practical skill"
+      - "Disney — 60+ daily guest interactions requiring empathy and data sensitivity"
+      - "Ascendis Pharma — collaboration with legal and scientific experts"
+
+  - name: "Training & Knowledge Transfer"
+    onet_category: "work_activity"
+    onet_match: "Training and Teaching Others"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Developed user training materials at FixStop. Provided SME guidance on system features and troubleshooting. Documented Disney automations for broader team deployment. Created comprehensive technical documentation at FL Indian River Groves for stakeholder handoff."
+    evidence:
+      - "FixStop — developed user training materials, provided SME guidance"
+      - "Disney — documented GSS-to-Skywalker for review as candidate for broader deployment"
+      - "FL Indian River Groves — comprehensive technical documentation for stakeholder review and cross-functional handoff"
+
+  # --- Inferred Domain Knowledge ---
+
+  - name: "Healthcare / HIPAA Compliance Domain"
+    onet_category: "knowledge"
+    onet_match: "Law and Government"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Multiple healthcare engagements requiring compliance knowledge: Compass Health HIPAA-compliant DocuSign workflows, Taurus Design Labs SSO/OAuth with HIPAA compliance, Ascendis Pharma working with legal and scientific experts on compliant content/visuals."
+    evidence:
+      - "Compass Health — HIPAA-compliant document processing and patient intake"
+      - "Taurus Design Labs — enterprise security protocols ensuring HIPAA compliance"
+      - "Ascendis Pharma — worked with legal/scientific experts for compliant content"
+
+  - name: "Pharma Marketing & Medical Education"
+    onet_category: "knowledge"
+    onet_match: "Sales and Marketing"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Built interactive educational app for Ascendis Pharma's TransCon Technology — a specific pharmaceutical product line. Collaborated with scientific experts on accurate content. Prototypes influenced Ascendis's subsequent customer-facing materials. This is pharma marketing/med-ed domain knowledge."
+    evidence:
+      - "Ascendis Pharma — TransCon Technology educational PWA"
+      - "Collaborated with legal and scientific experts for accurate pharma content"
+      - "Prototypes influenced client's subsequent customer-facing materials"
+      - "Genentech biooncology program production at Edgefactory"
+
+  - name: "Event Production & Logistics"
+    onet_category: "knowledge"
+    onet_match: "Production and Processing"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Multiple years of large-scale event production: 6,000+ person conferences, multi-venue coordination (3 hotels + 2 outdoor venues), 100+ booth exhibition halls, main stage production, breakout rooms, power/network infrastructure, union labor management."
+    evidence:
+      - "Edgefactory — multi-million dollar Fortune 500 events across multiple venues"
+      - "APWA — 3-day conference, 6,000+ attendees, 20 breakout rooms, 100+ booths"
+      - "Edgefactory — power management, network infrastructure, union labor coordination"
+      - "Santa Monica Seafood — multi-platform live event production"
+
+  - name: "eCommerce & Reservation Systems"
+    onet_category: "knowledge"
+    onet_match: "Customer and Personal Service"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Currently embedded in Disney's eCommerce contact center. Works daily with reservation systems (GSS, Skywalker), Disney Vacation Club product lines, and guest data workflows. Built POS system at FixStop with payment integration."
+    evidence:
+      - "Disney — eCommerce contact center, reservation systems, Disney Vacation Club"
+      - "Disney — GSS, Skywalker, and Cast systems expertise"
+      - "FixStop — full-stack POS system with Stripe payment integration"
+
+  - name: "Nonprofit Technology & Scaled Impact"
+    onet_category: "knowledge"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Built charity organization mobile app serving hundreds of thousands of users nationwide. This is specialized experience in nonprofit technology — high-scale user bases, donation workflows, SMS engagement, and working within nonprofit operational constraints."
+    evidence:
+      - "Charity Organization App — hundreds of thousands of users across the US"
+      - "Twilio SMS integration for nonprofit engagement"
+      - "Atomic design principles for scalable nonprofit platform"
+
+  # --- Inferred Cross-Disciplinary & Hybrid Capabilities ---
+
+  - name: "Technical-Creative Hybrid Execution"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Consistently operates at the intersection of engineering and creative design — a rare hybrid. Builds interactive animated applications (code + motion design), designs event spaces while managing power infrastructure (art direction + electrical engineering), creates 3D wayfinding by combining Blender artistry with Google Maps API data."
+    evidence:
+      - "Ascendis Pharma — interactive animated PWA (Angular + motion design)"
+      - "Edgefactory — event space design + power/network infrastructure management"
+      - "APWA — 3D wayfinding combining Blender artistry with Google Maps API data"
+      - "All resume variants — custom visual design + software engineering content"
+
+  - name: "Rapid Prototyping & Proof-of-Concept Development"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Repeatedly creates working prototypes that become production systems: Ascendis Pharma prototypes influenced their customer-facing materials, GSS-to-Skywalker bookmarklet went from self-initiative to deployment candidate, AR experience was conceptualized and executed on-site."
+    evidence:
+      - "Ascendis Pharma — Adobe XD prototypes influenced client's customer-facing materials"
+      - "Disney — GSS-to-Skywalker from self-initiative to deployment candidate"
+      - "Edgefactory — AR experience from concept to execution on-site"
+      - "Job Agent — iterative prototyping with token benchmarks"
+
+  - name: "Multi-Platform Content Strategy"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Coordinated simultaneous streaming to Facebook, YouTube, and Instagram at Santa Monica Seafood. Live streamed keynotes to YouTube + website at APWA (300% reach increase). Created content for physical events, virtual expos, kiosks, and mobile simultaneously."
+    evidence:
+      - "Santa Monica Seafood — simultaneous Facebook/YouTube/Instagram streaming"
+      - "APWA — YouTube + website streaming (300% reach increase)"
+      - "Ascendis Pharma — physical expo kiosk pivoted to virtual platform"
+
+  - name: "SEO & Digital Marketing"
+    onet_category: "knowledge"
+    onet_match: "Sales and Marketing"
+    proficiency: 2
+    inferred: true
+    inference_reasoning: "SEO Fundamentals certification from Lynda.com. SpeedRead featured project and keyword generation project on LinkedIn both involve search/marketing optimization. Digital signage and promotional materials across Edgefactory."
+    evidence:
+      - "SEO Fundamentals certification (Lynda.com, 2016)"
+      - "LinkedIn featured project — 'Generating Keywords for Search Campaigns' (Python-based)"
+      - "Edgefactory — promotional materials, digital signage, brand visibility"
+      - "Santa Monica Seafood — hashtag strategies, engagement tactics"
+
+  - name: "Contract Management (General & SLA)"
+    onet_category: "knowledge"
+    onet_match: "Law and Government"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Dunivan-Tech-Resume explicitly lists 'Contracts (General & SLA)' under Project Management skills. As a self-employed consultant, every client engagement involves contract negotiation. Vendor negotiations at Edgefactory also involve contractual terms."
+    evidence:
+      - "Dunivan-Tech-Resume — 'Contracts (General & SLA)' listed under PM skills"
+      - "Taurus Design Labs — all client engagements require contract management"
+      - "Edgefactory — vendor negotiations involving contractual terms"
+
+  - name: "Risk Assessment & Mitigation"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Dunivan-Tech-Resume explicitly lists 'Risk assessment and mitigation' under Edgefactory. DRC-Resume describes Compass Health work as 'Risk Mitigation.' BSA resume ranks automation use cases by operational risk and volume. Live event production inherently requires risk management."
+    evidence:
+      - "Dunivan-Tech-Resume — 'Risk assessment and mitigation' at Edgefactory"
+      - "Compass Health — 'identified and prioritized use cases ranked by operational risk and volume'"
+      - "Edgefactory — multi-venue event production requiring contingency planning"
+
+  - name: "Human Resource Coordination"
+    onet_category: "knowledge"
+    onet_match: "Personnel and Human Resources"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Dunivan-Tech-Resume lists 'Human Resource Management' under PM skills. Led 60+ person teams including union labor at Edgefactory. Coordinated installation and de-installation crews. Managed cross-functional teams at Taurus Design Labs."
+    evidence:
+      - "Dunivan-Tech-Resume — 'Human Resource Management' under PM skills"
+      - "Edgefactory — managed union labor crews of 60+ individuals"
+      - "Edgefactory — coordinated vendors and crews for installation/de-installation"
+
+  # --- Inferred Data & Analytics ---
+
+  - name: "Engagement Analytics & Metrics"
+    onet_category: "work_activity"
+    onet_match: "Analyzing Data or Information"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Consistently measures and reports engagement outcomes: 300% reach increase (APWA), 300% engagement boost (Santa Monica Seafood), 90% engagement retention through pivot (Ascendis Pharma), $3M-$10M projected impact (Disney). This is applied analytics thinking."
+    evidence:
+      - "APWA — measured 300% reach increase from live streaming"
+      - "Santa Monica Seafood — measured 300% engagement boost from tactics"
+      - "Ascendis Pharma — tracked 90% engagement retention through platform pivot"
+      - "Disney — projected $3M-$10M annual labor cost reduction with data"
+
+  - name: "Process Mapping & Workflow Analysis"
+    onet_category: "work_activity"
+    onet_match: "Analyzing Data or Information"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "GSS-to-Skywalker required analyzing, documenting, and fully automating an existing manual workflow. BSA resume emphasizes mapping integration points, dependencies, and operational improvements. Compass Health required identifying and prioritizing use cases for automation."
+    evidence:
+      - "Disney — analyzed, documented, and automated Skywalker Transfer workflow"
+      - "Disney — deep system analysis mapping integration points and dependencies"
+      - "Compass Health — identified and prioritized automation use cases"
+      - "DVC-BSA-Resume — 'Root Cause Analysis, Continuous Improvement' listed as core competencies"
+
+  - name: "Impact Quantification & ROI Modeling"
+    onet_category: "work_activity"
+    onet_match: "Analyzing Data or Information"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Estimated $3M-$10M projected annual labor cost reduction for Disney automation with specific methodology (20-55 min/shift x ~2,000 advisors x 600-1,800 hours/day). Measured 1400% deployment time reduction. Tracked $10K AR revenue. This is structured impact quantification."
+    evidence:
+      - "Disney — $3M-$10M projected impact with hours/day and advisor count methodology"
+      - "FL Indian River Groves — 1400% deployment time reduction measured"
+      - "Edgefactory — $10K revenue from AR experience tracked"
+      - "Edgefactory — 70% cost reduction vs. traditional printing quantified"
+
+  # --- Inferred Compliance & Security ---
+
+  - name: "PII Handling & Data Privacy"
+    onet_category: "knowledge"
+    onet_match: "Law and Government"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Manages confidential guest data (PII) across 60+ daily interactions at Disney in full compliance with privacy standards. HIPAA-compliant document processing at Compass Health. Enterprise security protocols at Taurus Design Labs."
+    evidence:
+      - "Disney — manages reservation numbers, account details, PII across 60+ daily interactions"
+      - "Disney — full compliance with privacy and security standards"
+      - "Compass Health — HIPAA-compliant document processing"
+      - "Taurus Design Labs — SSO/OAuth 2.0 enterprise security"
+
+  - name: "Regulatory & Compliance Content Production"
+    onet_category: "knowledge"
+    onet_match: "Law and Government"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Worked within highly regulated pharma marketing (Ascendis Pharma) collaborating with legal and scientific experts. Developed HIPAA-compliant workflows. Disney data privacy standards. Genentech biooncology program. Each required understanding regulatory boundaries for content."
+    evidence:
+      - "Ascendis Pharma — collaborated with legal and scientific experts for compliant content"
+      - "Taurus Design Labs — worked within highly regulated industries with strict content/visual guidelines"
+      - "Compass Health — compliance workflows reducing document errors"
+      - "Genentech biooncology — regulated pharmaceutical client"
+
+  # --- Inferred Mathematics & Analytical ---
+
+  - name: "Mathematical Reasoning & Induction"
+    onet_category: "knowledge"
+    onet_match: "Mathematics"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Dunivan-Tech-Resume explicitly lists 'Mathematics: Mathematical Induction' as a skill. Data science coursework (DataCamp). Token economics modeling. Budget projection and ROI estimation all require mathematical reasoning."
+    evidence:
+      - "Dunivan-Tech-Resume — 'Mathematical Induction' listed as skill"
+      - "DataCamp — Associate Data Scientist Professional (in progress)"
+      - "Job Agent — token economics and cost modeling"
+      - "Disney — projected annual labor cost reduction calculations"
+
+  - name: "Audience Engagement & Experience Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Designs experiences to maximize audience engagement across every medium: interactive kiosks, live events, mobile apps, virtual expos, AR experiences, RSVP reading tools. Consistently measures engagement (300% boost, 90% retention, $10K revenue). This is a deliberate audience-first design pattern."
+    evidence:
+      - "Ascendis Pharma — interactive kiosk with reactive animations for audience engagement"
+      - "Santa Monica Seafood — real-time engagement tactics (giveaways, hashtags, 300% boost)"
+      - "Edgefactory — AR photo experience designed for attendee engagement ($10K revenue)"
+      - "SpeedRead — RSVP tool designed for reader engagement and speed improvement"
+
+  - name: "Geospatial Data Visualization"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Developed 3D CGI wayfinding system using Blender + Google Maps API for 6,000-person conference. Created 3D wayfinding video integrating city buildings, streets, and environmental data. This is geospatial data visualization — combining geographic data with 3D rendering."
+    evidence:
+      - "Edgefactory — 3D CGI wayfinding with Google Maps API for 6,000-person conference"
+      - "APWA — 3D wayfinding integrating city buildings, streets, environmental data"
+
+  - name: "Network Infrastructure & Hardware Integration"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Set up internal iPad networks connecting multiple devices. Managed power/network drops for large venues. Integrated printers, display TVs, and local machines into cohesive systems. Configured Linux servers on Azure/AWS."
+    evidence:
+      - "Edgefactory — power management, network drops, internal iPad network setup"
+      - "Edgefactory — integrated local machines, printers, display TVs into AR system"
+      - "FL Indian River Groves — Linux server management on Azure and AWS"
+      - "Edgefactory — multi-venue network infrastructure coordination"
+
+  - name: "Cross-Platform Deployment & Release Management"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Deployed cross-platform mobile apps (iOS & Android) via Expo. OTA updates via EAS. GitHub Actions CI/CD. Multi-platform streaming coordination. DVC-BSA-Resume lists 'Release Coordination' as a DevOps competency."
+    evidence:
+      - "Charity App — cross-platform iOS & Android deployment via Expo"
+      - "Charity App — OTA updates via EAS"
+      - "FL Indian River Groves — GitHub Actions CI/CD pipelines"
+      - "DVC-BSA-Resume — 'Release Coordination' listed under DevOps"
+
+  - name: "Atomic Design & Component Architecture"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Integrated Storybook to apply 'scalable atomic design principles' in the charity app. Built component-based systems across Angular, React, and React Native projects. This demonstrates knowledge of atomic design methodology and component architecture patterns."
+    evidence:
+      - "Charity App — Storybook integration with scalable atomic design principles"
+      - "Multiple projects using component-based frameworks (Angular, React, React Native)"
+      - "Dunivan-Tech-Resume — web application development across Angular, React, Remix, PWAs"
+
   # --- Emerging / Project-Based (not yet on resume) ---
   - name: "Kuzu Graph DB"
     onet_category: "tech_skill"
@@ -1332,4 +1799,6 @@ meta:
     - "LinkedIn shows CAPM in headline — verify if certification is current"
     - "PMI membership since 2015 — 11 years of PM ecosystem exposure"
     - "7 personas total: 3 active, 4 passive — adjust status as search priorities shift"
-    - "Inferred design skills marked with 'inferred: true' flag — review for accuracy"
+    - "7 original inferred design skills + 34 new comprehensive inferred skills added (2026-03-17)"
+    - "Inferred skills span: business/entrepreneurial, technical architecture, soft skills, domain knowledge, cross-disciplinary, compliance, analytics"
+    - "All inferred skills marked with 'inferred: true' flag and 'inference_reasoning' — review for accuracy"
