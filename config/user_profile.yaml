@@ -659,7 +659,7 @@ skills:
     proficiency: 2
     years: 1
     evidence:
-      - "Edgefactory — AR photo experience using Snapchat geofencing + iPad network ($10K revenue generated)"
+      - "Edgefactory — early adoption of Snapchat's beta geofencing feature; built full experiential pipeline midafternoon-to-evening: geofenced capture → iPad iCloud auto-sync → vendor display on multiple TVs → printing service at restaurant venue days later ($10K revenue)"
 
   - name: "Rive Animations"
     onet_category: "tech_skill"
@@ -1032,7 +1032,7 @@ skills:
     inference_reasoning: "Managed power/network drops, coordinated A/V vendors, set up internal iPad networks, integrated printers/displays/machines for interactive experiences. This is live A/V systems engineering."
     evidence:
       - "Edgefactory — power management, network infrastructure, A/V vendor coordination"
-      - "Edgefactory — AR photo experience (iPad network + Snapchat geofencing + printers + display TVs)"
+      - "Edgefactory — Snapchat beta geofence → iPad iCloud auto-sync → vendor TV display → multi-venue printing service (6 systems, zero prep)"
       - "DRC-Resume — A/V and Theatrical Technologies (explicit skill)"
 
   # --- Inferred Business & Entrepreneurial Skills ---
@@ -1540,7 +1540,7 @@ experience:
     end: ~  # current
     type: "W-2"
     highlights:
-      - "$3M-$10M projected annual labor impact: identified and automated Skywalker Transfer bottleneck — reduced process from minutes to under 10 seconds across ~2,000 advisors"
+      - "$3M-$10M projected annual labor impact: identified Skywalker Transfer bottleneck, documented full automation path, built working prototype — reduces process from minutes to under 10 seconds across ~2,000 advisors (documented for review, not yet deployed)"
       - "Built dual-mode bookmarklet in browser-restricted environment (Shadow DOM traversal, async rendering, framework-aware value injection, clipboard fallback)"
       - "Emerging SME on Disney Cast systems (GSS, Skywalker) across Disney Vacation Club product lines"
       - "Ranked top of training cohort — selected for accelerated exposure to technology and project management including telecom"
