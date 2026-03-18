@@ -85,6 +85,36 @@ personas:
     resume_version: "resume_ecommerce_v1.md"
     status: "active"
 
+  - id: "ai-ml-engineer"
+    label: "AI / ML Engineer / Applied AI Specialist"
+    onet_codes:
+      - "15-1221.00"  # Computer and Information Research Scientists
+      - "15-2051.00"  # Data Scientists
+      - "15-1252.00"  # Software Developers (AI tooling)
+    target_roles:
+      - "AI Engineer"
+      - "Machine Learning Engineer"
+      - "Applied AI Developer"
+      - "LLM Engineer"
+      - "AI/ML Platform Engineer"
+      - "Prompt Engineer"
+      - "AI Automation Specialist"
+      - "NLP Engineer"
+    target_industries:
+      - "Technology"
+      - "Healthcare"
+      - "Finance"
+      - "Entertainment"
+      - "Consulting"
+    work_arrangement: ["remote", "hybrid"]
+    salary_range:
+      min: 100000
+      max: 180000
+      currency: "USD"
+    employment_type: ["W-2", "contract"]
+    resume_version: "resume_ai_v1.md"
+    status: "active"
+
   - id: "security-research"
     label: "Security Researcher / Information Security Analyst"
     onet_codes:
@@ -396,6 +426,111 @@ skills:
       - "APWA — live streaming, keynote production"
       - "Santa Monica Seafood — multi-platform live events"
 
+  # --- AI / ML / LLM ---
+  - name: "LLM Architecture & Optimization"
+    onet_category: "tech_skill"
+    onet_match: ~  # no direct O*NET match — emerging field
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Job Agent — token optimization benchmarks (60.4% input savings)"
+      - "Ablation testing of LLM configurations"
+      - "Prompt engineering and structured output design"
+
+  - name: "Ollama / Local LLM Deployment"
+    onet_category: "tech_skill"
+    onet_match: ~  # too new for O*NET
+    proficiency: 3
+    years: 1
+    evidence:
+      - "Job Agent — local Ollama with token tracking wrapper"
+      - "Model selection and benchmarking (Mistral, Llama, Qwen, Phi)"
+
+  - name: "AI Workflow Orchestration"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    years: 1
+    evidence:
+      - "Job Agent — evaluating n8n, LangGraph, custom Python orchestration"
+      - "Multi-step LLM pipelines with tool calling"
+      - "Agent architecture design (planner → executor → evaluator)"
+
+  - name: "Prompt Engineering"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 4
+    years: 2
+    evidence:
+      - "Job Agent — V1 vs V2 prompt optimization (9/9 benchmarks pass)"
+      - "Structured output design, few-shot patterns, chain-of-thought"
+      - "System prompt design for multi-agent workflows"
+
+  - name: "RAG / Retrieval-Augmented Generation"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 2
+    years: 1
+    evidence:
+      - "OpenClaw — CocoIndex + Kuzu graph DB for document retrieval"
+      - "Embedding-based search patterns"
+
+  - name: "Token Economics & Cost Optimization"
+    onet_category: "work_activity"
+    onet_match: "Analyzing Data or Information"
+    proficiency: 3
+    years: 1
+    evidence:
+      - "Job Agent — built token_tracker.py, benchmark harness"
+      - "Input/output token measurement, cost modeling per provider"
+      - "OPTIMIZATION_NOTES.md — documented strategies"
+
+  - name: "AI Agent Design"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    years: 1
+    evidence:
+      - "Job Agent — multi-agent architecture (discovery, tailoring, OSINT, browser hand)"
+      - "Tool-calling patterns, state management, error propagation"
+
+  - name: "Data Pipeline / ETL"
+    onet_category: "tech_skill"
+    onet_match: "Extract transform load ETL software"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "OpenClaw — CocoIndex data pipelines"
+      - "FL Indian River Groves — ODBC real-time sync"
+      - "DataCamp coursework"
+
+  - name: "TensorFlow / PyTorch"
+    onet_category: "tech_skill"
+    onet_match: "TensorFlow"
+    proficiency: 1
+    years: 1
+    evidence:
+      - "DataCamp coursework — exposure level"
+    notes: "Growing — DataCamp Associate Data Scientist track"
+
+  - name: "NLP / Text Processing"
+    onet_category: "tech_skill"
+    onet_match: "Natural language processing software"
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Job Agent — JD parsing, resume-to-job matching design"
+      - "O*NET entity extraction for skill matching"
+
+  # --- O*NET Knowledge Areas (AI-related) ---
+  - name: "Artificial Intelligence & Machine Learning"
+    onet_category: "knowledge"
+    onet_match: "Computers and Electronics"  # closest O*NET knowledge bucket
+    proficiency: 3
+    evidence:
+      - "LLM ablation, token optimization, agent design, RAG, workflow orchestration"
+      - "Rapidly growing through active projects"
+
   # --- Emerging / Project-Based (not yet on resume) ---
   - name: "Kuzu Graph DB"
     onet_category: "tech_skill"
@@ -413,13 +548,13 @@ skills:
     evidence:
       - "OpenClaw project"
 
-  - name: "Ollama / Local LLM"
+  - name: "Web Scraping / Crawling Frameworks"
     onet_category: "tech_skill"
-    onet_match: ~  # too new for O*NET
+    onet_match: ~
     proficiency: 2
     years: 1
     evidence:
-      - "Job Agent project — token optimization benchmarks"
+      - "Job Agent — Crawlee + Camoufox architecture design"
 
 # -----------------------------------------------------------------------------
 # EXPERIENCE — Structured work history (parsed from resume)
