@@ -1502,6 +1502,75 @@ skills:
       - "Multiple projects using component-based frameworks (Angular, React, React Native)"
       - "Dunivan-Tech-Resume — web application development across Angular, React, Remix, PWAs"
 
+  # --- Inferred Meta-Capabilities ---
+  # These are higher-order patterns that emerge from analyzing HOW Joseph
+  # solves problems across his career, not just WHAT he's built.
+  # They represent compound capabilities that are greater than the sum
+  # of individual skills — and are the hardest to find in candidates.
+
+  - name: "Technology Scouting & Pre-Market Application"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Discovered Snapchat geofencing while still in beta, unknown outside developer circles, and immediately saw a production application the events industry hadn't conceived of yet. This isn't early adoption — it's pre-market technology intelligence: monitoring the bleeding edge and recognizing real-world applications before the market has awareness. Pattern repeats with Rive animations, Crawlee+Camoufox architecture, Ollama local LLM deployment, and CocoIndex/Kuzu for graph RAG."
+    evidence:
+      - "Edgefactory — discovered Snapchat beta geofencing and built first-of-its-kind experiential pipeline before anyone in events knew the capability existed"
+      - "Job Agent — evaluating Crawlee + Camoufox (emerging browser automation), Ollama (local LLM), CocoIndex + Kuzu (graph RAG)"
+      - "FL Indian River Groves — Rive animations for onboarding (early adoption of emerging animation platform)"
+      - "Ascendis Pharma — service workers for offline PWA capability (ahead of mainstream adoption in pharma)"
+
+  - name: "Zero-to-One Product Invention"
+    onet_category: "work_activity"
+    onet_match: "Thinking Creatively"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Creates novel products/experiences with no playbook, no precedent, no brief. The Snapchat geofencing pipeline didn't iterate on an existing concept — it was invented from a beta capability nobody else was using in that context. SpeedRead (RSVP reader) is a self-invented product. The GSS-to-Skywalker bookmarklet was invented in a restricted environment. The fabric column technique was invented to solve a cost problem. These aren't improvements — they're originations."
+    evidence:
+      - "Edgefactory — invented geofenced experiential photo pipeline from a technology that didn't have a playbook yet"
+      - "SpeedRead — self-invented RSVP reader product (2018-present)"
+      - "Disney — invented bookmarklet automation in environment where no tooling existed"
+      - "Edgefactory — invented fabric column technique (70% cost reduction, adopted company-wide)"
+      - "Job Agent — inventing AI-powered job search agent from scratch"
+
+  - name: "Improvised Systems Architecture"
+    onet_category: "skill"
+    onet_match: "Systems Evaluation"
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Distinct from planned systems integration. Under time pressure and with no preparation, chains together whatever systems are available into working pipelines: Snapchat → iPad → iCloud → vendor software → TVs → printers (6 systems, same afternoon). Disney bookmarklet chains simulated DOM events → data sanitization → form injection across Shadow DOM layers. AR experience required sourcing printer equipment same-day. This is architecture under ambiguity."
+    evidence:
+      - "Edgefactory — 6-system pipeline (geofence → iCloud → TV display → printing) built in hours with no prep"
+      - "Disney — bookmarklet chaining DOM events → data pull → sanitization → cross-system injection"
+      - "Edgefactory — sourced printer equipment same-day to complete the experiential pipeline"
+      - "Ascendis Pharma — pivoted entire platform architecture from physical to virtual under pandemic pressure"
+
+  - name: "Experiential Product Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    inferred: true
+    inference_reasoning: "Designs end-to-end user journeys, not just features. The Snapchat pipeline wasn't a photo booth — it was a multi-day, multi-venue guest experience: take photo at expo → see it on TV in real-time → collect your print at a restaurant venue later in the week. The Ascendis Pharma kiosk was an educational journey through TransCon Technology. The APWA wayfinding was an orientation experience. This is experience design thinking applied across physical and digital."
+    evidence:
+      - "Edgefactory — designed full guest journey: photo capture → real-time TV display → restaurant printing service across days and venues"
+      - "Ascendis Pharma — educational product journey through TransCon Technology with reactive animations"
+      - "APWA — 3D wayfinding experience integrating city buildings, streets, environmental data"
+      - "Santa Monica Seafood — 60-minute multi-platform live event integrating product info, interaction, and demos"
+
+  - name: "Resourcefulness Under Ambiguity"
+    onet_category: "work_activity"
+    onet_match: "Making Decisions and Solving Problems"
+    proficiency: 5
+    inferred: true
+    inference_reasoning: "This may be the single most defining capability. Repeatedly delivers production-quality outcomes with incomplete information, no preparation time, and severe constraints. Figured out what printer equipment was needed and sourced it same-day. Built a bookmarklet in an environment with no dev tools. Created fabric columns without precedent. Pivoted an entire conference platform during a pandemic. Every major accomplishment in the profile follows this pattern — ambiguity in, impact out."
+    evidence:
+      - "Edgefactory — sourced printer equipment same-day for a pipeline built from a beta technology nobody had used before"
+      - "Disney — built automation in browser-restricted environment with no dev tools, no extensions, no admin access"
+      - "Edgefactory — invented fabric column technique with no precedent (70% cost reduction)"
+      - "Ascendis Pharma — pivoted from physical to virtual expo maintaining 90% engagement"
+      - "Job Agent — building AI agent on $50/month budget constraint"
+      - "Pattern: every major career accomplishment emerges from ambiguity, not from clear briefs"
+
   # --- Emerging / Project-Based (not yet on resume) ---
   - name: "Kuzu Graph DB"
     onet_category: "tech_skill"
