@@ -18,7 +18,7 @@
 
 ### OQ-1: User Profile & Identity Model
 
-**Status:** OPEN
+**Status:** RESOLVED (2026-03-17)
 **Affects:** Resume tailoring, skill gap analysis, OSINT, job matching, dashboard — essentially everything
 
 **The gap:** The system knows what features to build but hasn't defined who it's serving. Joseph's background spans multiple career domains — React/Next.js development, SOX audit and compliance, security research, legacy system maintenance, automation engineering, and contract/freelance work. This is not a single-persona job search.
@@ -567,7 +567,7 @@ Log outcome   Log outcome     Log outcome    Log outcome
 
 | OQ # | Resolved Date | Decision | Rationale |
 |------|---------------|----------|-----------|
-| — | — | — | (No resolutions yet) |
+| OQ-1 | 2026-03-17 | Multi-persona YAML profile with O*NET integration. 4 personas (2 active, 2 passive), 30+ skills mapped to O*NET entities. File: `config/user_profile.yaml` | Bootstrapped from resume PDF + session context. User confirmed O*NET integration and multi-persona approach. |
 
 ---
 
