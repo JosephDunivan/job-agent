@@ -1,0 +1,553 @@
+# =============================================================================
+# User Profile — Job Agent
+# =============================================================================
+# This is the master identity file. Every downstream feature reads from here:
+# resume tailoring, job matching, OSINT targeting, skill gap analysis, dashboard.
+#
+# HOW TO EDIT:
+#   - Skills: add/remove/adjust proficiency as you learn new things
+#   - Personas: activate/deactivate search lanes, adjust targets
+#   - Experience: add new roles, update bullet points
+#   - This file IS the source of truth. The system parses it at runtime.
+#
+# O*NET INTEGRATION:
+#   - Each skill can optionally map to an O*NET entity for standardized matching
+#   - Personas reference O*NET occupation codes for scoring alignment
+#   - See: https://www.onetonline.org/find/all
+# =============================================================================
+
+identity:
+  name: "Joseph Dunivan"
+  email: "Joey@TaurusDesignLabs.com"
+  phone: "206.643.9519"
+  location: "Orlando, FL"
+  portfolio: "Joseph-Dunivan.netlify.app"
+
+# -----------------------------------------------------------------------------
+# PERSONAS — Each persona is a search lane with its own targets and resume
+# -----------------------------------------------------------------------------
+# Status options: active | passive | paused
+#   active  = system runs searches, scores matches, generates tailored resumes
+#   passive = system scores incoming jobs against this persona but doesn't search
+#   paused  = lane is off, no processing
+# -----------------------------------------------------------------------------
+
+personas:
+
+  - id: "software-engineer"
+    label: "Software Engineer / Full-Stack Developer"
+    onet_codes:
+      - "15-1252.00"  # Software Developers
+      - "15-1254.00"  # Web Developers
+    target_roles:
+      - "Software Engineer"
+      - "Full-Stack Developer"
+      - "Frontend Engineer"
+      - "Web Developer"
+      - "Angular Developer"
+      - "React Developer"
+    target_industries:
+      - "Technology"
+      - "Healthcare"
+      - "Entertainment"
+      - "Finance"
+    work_arrangement: ["remote", "hybrid", "onsite"]
+    salary_range:
+      min: 85000
+      max: 150000
+      currency: "USD"
+    employment_type: ["W-2"]
+    resume_version: "resume_software_v1.md"
+    status: "active"
+
+  - id: "ecommerce-ops"
+    label: "eCommerce / Contact Center Technology Specialist"
+    onet_codes:
+      - "15-1252.00"  # Software Developers (systems side)
+      - "15-1242.00"  # Database Administrators
+    target_roles:
+      - "eCommerce Specialist"
+      - "eCommerce Technology Analyst"
+      - "Contact Center Technology Analyst"
+      - "Systems Analyst"
+      - "Technical Operations Analyst"
+    target_industries:
+      - "Entertainment"
+      - "Retail"
+      - "Hospitality"
+      - "Healthcare"
+    work_arrangement: ["onsite", "hybrid"]
+    salary_range:
+      min: 75000
+      max: 130000
+      currency: "USD"
+    employment_type: ["W-2"]
+    resume_version: "resume_ecommerce_v1.md"
+    status: "active"
+
+  - id: "security-research"
+    label: "Security Researcher / Information Security Analyst"
+    onet_codes:
+      - "15-1212.00"  # Information Security Analysts
+    target_roles:
+      - "Information Security Analyst"
+      - "Security Researcher"
+      - "SOC Analyst"
+      - "Application Security Engineer"
+      - "Vulnerability Analyst"
+    target_industries:
+      - "Technology"
+      - "Finance"
+      - "Government"
+      - "Healthcare"
+    work_arrangement: ["remote", "hybrid"]
+    salary_range:
+      min: 90000
+      max: 160000
+      currency: "USD"
+    employment_type: ["W-2"]
+    resume_version: "resume_security_v1.md"
+    status: "passive"   # activate when ready to search this lane
+
+  - id: "freelance-automation"
+    label: "Freelance Automation / Integration Consultant"
+    onet_codes:
+      - "15-1252.00"  # Software Developers
+    target_roles:
+      - "Automation Engineer"
+      - "Integration Developer"
+      - "DocuSign Developer"
+      - "Workflow Automation Consultant"
+      - "Python Developer"
+    rate_range:
+      min: 65
+      max: 120
+      currency: "USD"
+      unit: "hourly"
+    employment_type: ["1099", "contract"]
+    resume_version: "resume_freelance_v1.md"
+    status: "passive"
+
+# -----------------------------------------------------------------------------
+# SKILLS — Unified inventory shared across all personas
+# -----------------------------------------------------------------------------
+# Proficiency scale: 1 (exposure) → 2 (working) → 3 (proficient) → 4 (advanced) → 5 (expert)
+#
+# onet_category maps to O*NET entity types:
+#   tech_skill  = O*NET "Technology Skills"
+#   knowledge   = O*NET "Knowledge" (33 areas)
+#   skill       = O*NET "Skills" (35 areas)
+#   work_activity = O*NET "Work Activities" (41 areas)
+# -----------------------------------------------------------------------------
+
+skills:
+
+  # --- Languages ---
+  - name: "JavaScript / TypeScript"
+    onet_category: "tech_skill"
+    onet_match: "JavaScript"
+    proficiency: 4
+    years: 7
+    evidence:
+      - "Taurus Design Labs — Angular/jQuery PWAs (2017–present)"
+      - "FL Indian River Groves — backend + frontend"
+      - "AP Live — Angular kiosk app"
+
+  - name: "PHP"
+    onet_category: "tech_skill"
+    onet_match: "PHP"
+    proficiency: 3
+    years: 7
+    evidence:
+      - "Taurus Design Labs — REST APIs with PHP backend"
+
+  - name: "HTML / CSS"
+    onet_category: "tech_skill"
+    onet_match: "Cascading style sheets CSS"
+    proficiency: 4
+    years: 7
+    evidence:
+      - "All web roles — responsive interfaces, cross-browser compatibility"
+
+  - name: "SQL"
+    onet_category: "tech_skill"
+    onet_match: "SQL"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "FL Indian River Groves — complex queries, stored procedures, schema design"
+      - "Taurus Design Labs — Azure SQL databases"
+
+  - name: "C#"
+    onet_category: "tech_skill"
+    onet_match: "C#"
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Listed on resume — exposure level"
+
+  - name: "Python"
+    onet_category: "tech_skill"
+    onet_match: "Python"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "OpenClaw project (CocoIndex + Kuzu)"
+      - "Job Agent project (current)"
+      - "DataCamp coursework"
+
+  # --- Frameworks ---
+  - name: "Angular"
+    onet_category: "tech_skill"
+    onet_match: "Google Angular"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "AP Live — interactive PWA for Ascendis Pharma"
+      - "Taurus Design Labs — progressive web apps"
+
+  - name: "React / React Native"
+    onet_category: "tech_skill"
+    onet_match: "React"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Resume skills section"
+      - "OpenClaw dashboard (Next.js)"
+
+  - name: "jQuery"
+    onet_category: "tech_skill"
+    onet_match: "jQuery"
+    proficiency: 4
+    years: 7
+    evidence:
+      - "Taurus Design Labs — interactive dashboards, AJAX, dynamic rendering"
+
+  # --- Database & Cloud ---
+  - name: "Azure SQL Server"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft SQL Server"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "FL Indian River Groves — complex queries, stored procedures, optimized schemas"
+      - "Taurus Design Labs — Azure SQL databases, App Services"
+
+  - name: "Azure MySQL"
+    onet_category: "tech_skill"
+    onet_match: "MySQL"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "Taurus Design Labs"
+
+  - name: "Supabase"
+    onet_category: "tech_skill"
+    onet_match: "PostgreSQL"  # Supabase wraps Postgres
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Resume skills section"
+
+  - name: "Microsoft Azure"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft Azure"
+    proficiency: 3
+    years: 5
+    evidence:
+      - "FL Indian River Groves — cloud infra, Linux servers"
+      - "Taurus Design Labs — App Services, Blob Storage, Active Directory"
+
+  - name: "ODBC Connections"
+    onet_category: "tech_skill"
+    onet_match: "ODBC"
+    proficiency: 4
+    years: 3
+    evidence:
+      - "FL Indian River Groves — real-time system synchronization"
+
+  # --- DevOps ---
+  - name: "GitHub Actions / CI/CD"
+    onet_category: "tech_skill"
+    onet_match: "GitHub"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "FL Indian River Groves — CI/CD pipelines reducing deployment time 1400%"
+
+  - name: "Batch Scripts / Automated Workflows"
+    onet_category: "tech_skill"
+    onet_match: "Automation software"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "Multiple roles — scheduled and event-driven workflows"
+
+  # --- Enterprise / Integration ---
+  - name: "DocuSign API"
+    onet_category: "tech_skill"
+    onet_match: "DocuSign"
+    proficiency: 4
+    years: 2
+    evidence:
+      - "Compass Health System — HIPAA-compliant workflow automation"
+
+  - name: "SSO / OAuth 2.0 / OpenID Connect"
+    onet_category: "tech_skill"
+    onet_match: "Single sign-on SSO"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "Taurus Design Labs — enterprise security protocols, HIPAA compliance"
+
+  - name: "Twilio API"
+    onet_category: "tech_skill"
+    onet_match: "Twilio"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Taurus Design Labs — SMS automation, webhooks, event-driven messaging"
+
+  - name: "REST APIs"
+    onet_category: "tech_skill"
+    onet_match: "Application programming interfaces API"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "Taurus Design Labs — PHP REST APIs"
+      - "FL Indian River Groves — system integration"
+      - "Compass Health — DocuSign API"
+
+  - name: "PuTTY / Linux Server Admin"
+    onet_category: "tech_skill"
+    onet_match: "PuTTY"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "FL Indian River Groves — Azure/AWS Linux server management"
+
+  - name: "Excel (Pivot Tables, XML Imports, Formulas)"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft Excel"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "Multiple roles — data analysis, reporting"
+
+  - name: "SharePoint"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft SharePoint"
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Resume skills section"
+
+  # --- O*NET General Skills (non-technology) ---
+  - name: "Programming"
+    onet_category: "skill"
+    onet_match: "Programming"
+    proficiency: 4
+    years: 7
+
+  - name: "Critical Thinking"
+    onet_category: "skill"
+    onet_match: "Critical Thinking"
+    proficiency: 4
+    years: 7
+
+  - name: "Complex Problem Solving"
+    onet_category: "skill"
+    onet_match: "Complex Problem Solving"
+    proficiency: 4
+    years: 7
+
+  - name: "Systems Analysis"
+    onet_category: "skill"
+    onet_match: "Systems Analysis"
+    proficiency: 3
+    years: 3
+
+  - name: "Active Learning"
+    onet_category: "skill"
+    onet_match: "Active Learning"
+    proficiency: 4
+    years: 7
+    evidence:
+      - "DataCamp (in progress), Coursera certs, self-directed OpenClaw + Job Agent"
+
+  # --- O*NET Knowledge Areas ---
+  - name: "Computers and Electronics"
+    onet_category: "knowledge"
+    onet_match: "Computers and Electronics"
+    proficiency: 4
+
+  - name: "Customer and Personal Service"
+    onet_category: "knowledge"
+    onet_match: "Customer and Personal Service"
+    proficiency: 3
+    evidence:
+      - "Disney Destinations — eCommerce contact center operations"
+
+  - name: "Communications and Media"
+    onet_category: "knowledge"
+    onet_match: "Communications and Media"
+    proficiency: 4
+    evidence:
+      - "APWA — live streaming, keynote production"
+      - "Santa Monica Seafood — multi-platform live events"
+
+  # --- Emerging / Project-Based (not yet on resume) ---
+  - name: "Kuzu Graph DB"
+    onet_category: "tech_skill"
+    onet_match: ~  # no O*NET match yet
+    proficiency: 2
+    years: 1
+    evidence:
+      - "OpenClaw project"
+
+  - name: "Next.js"
+    onet_category: "tech_skill"
+    onet_match: "React"  # closest O*NET match
+    proficiency: 3
+    years: 1
+    evidence:
+      - "OpenClaw project"
+
+  - name: "Ollama / Local LLM"
+    onet_category: "tech_skill"
+    onet_match: ~  # too new for O*NET
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Job Agent project — token optimization benchmarks"
+
+# -----------------------------------------------------------------------------
+# EXPERIENCE — Structured work history (parsed from resume)
+# -----------------------------------------------------------------------------
+
+experience:
+
+  - title: "eCommerce Specialist"
+    company: "Disney Destinations LLC"
+    location: "Orlando, FL"
+    start: "2025-01"
+    end: ~  # current
+    type: "W-2"
+    highlights:
+      - "Support contact center operations and technology systems within Disney's eCommerce division"
+
+  - title: "Software Engineer"
+    company: "Florida Indian River Groves"
+    location: "Orlando, FL"
+    start: "2021-09"
+    end: "2022-12"
+    type: "W-2"
+    highlights:
+      - "Architected Azure SQL Server backend — complex queries, stored procedures, optimized schemas"
+      - "Built CI/CD pipelines using GitHub Actions — reduced deployment time by 1400%"
+      - "Used PuTTY and terminal software to manage Linux servers on Azure and AWS"
+      - "Implemented ODBC connections for real-time data source integration"
+      - "Created comprehensive technical documentation — database schemas, API specs, architecture diagrams"
+
+  - title: "Software Engineer"
+    company: "Taurus Design Labs"
+    location: "Orlando, FL"
+    start: "2017-01"
+    end: ~  # ongoing
+    type: "W-2"
+    highlights:
+      - "Designed REST APIs with PHP backend integrated with Azure SQL and cloud services"
+      - "Implemented Twilio API for SMS automation, webhooks, and event-driven messaging"
+      - "Developed Angular progressive web apps with JavaScript/TypeScript for healthcare and nonprofit clients"
+      - "Configured SSO solutions (OAuth 2.0/OpenID Connect) ensuring HIPAA compliance"
+      - "Built interactive dashboards with jQuery, AJAX, JSON, XML for async data operations"
+      - "Managed Azure App Services, SQL Databases, Blob Storage, and Active Directory"
+
+  - title: "DocuSign Developer"
+    company: "Compass Health System"
+    location: "Orlando, FL"
+    start: "2023-01"
+    end: "2023-12"
+    type: "1099"
+    highlights:
+      - "Identified and prioritized use cases to reduce admin overhead via automated DocuSign workflows"
+      - "Developed compliance workflows reducing document errors and improving patient intake"
+      - "Integrated DocuSign API with healthcare systems for HIPAA-compliant electronic signatures"
+      - "Collaborated with executive stakeholders on workflow automation solutions"
+
+  - title: "Software Engineer"
+    company: "AP Live & Ascendis Pharma"
+    location: "Orlando, FL"
+    start: "2020-03"
+    end: "2021-03"
+    type: "1099"
+    highlights:
+      - "Developed interactive PWA focused on TransCon Technology education"
+      - "Built Angular animated application for expo kiosk use"
+      - "Pivoted to 3D virtual expo platform during pandemic — maintained 90% engagement metrics"
+      - "Built responsive HTML/CSS interfaces with service workers for offline capability"
+
+  - title: "Producer"
+    company: "American Public Works Association (PWX2021)"
+    location: "St. Louis, MO"
+    start: "2021-05"
+    end: "2021-09"
+    type: "1099"
+    highlights:
+      - "Designed technical plan for 3-day conference — 6,000+ attendees, 20 breakout rooms, 100+ booths"
+      - "Produced opening keynote presentation for new APWA President"
+      - "Live streamed keynotes to YouTube/web — increased reach 300%"
+
+  - title: "Technical Producer & Set Designer"
+    company: "Santa Monica Seafood"
+    location: "Santa Monica, CA"
+    start: "2020-04"
+    end: "2021-12"
+    type: "1099"
+    highlights:
+      - "Produced multi-platform live streaming to Facebook, YouTube, Instagram simultaneously"
+      - "Developed 60-minute multi-platform live event integrating product info and live demos"
+      - "Implemented real-time engagement tactics — boosted participant engagement 300%"
+
+# -----------------------------------------------------------------------------
+# EDUCATION
+# -----------------------------------------------------------------------------
+
+education:
+  - degree: "Associate Data Scientist Professional"
+    institution: "DataCamp"
+    status: "in_progress"
+
+  - degree: "IT Project Management"
+    institution: "IBM on Coursera"
+    year: 2024
+
+  - degree: "Project Management"
+    institution: "Grow with Google on Coursera"
+    year: 2024
+
+# -----------------------------------------------------------------------------
+# CERTIFICATIONS
+# -----------------------------------------------------------------------------
+
+certifications:
+  - name: "HTML/CSS"
+    issuer: ~
+  - name: "XML Essential Training"
+    issuer: ~
+  - name: "Integrated Data in Finance Apps with Dynamics 365"
+    issuer: "Microsoft"
+
+# -----------------------------------------------------------------------------
+# META — Profile management
+# -----------------------------------------------------------------------------
+
+meta:
+  created: "2026-03-17"
+  last_updated: "2026-03-17"
+  source: "Parsed from DRC-Software-Resume-Dunivan.pdf + prior session context"
+  notes:
+    - "SOX audit experience from current Disney W-2 role not on this resume version"
+    - "Security research (OpenClaw) is project-based, not yet a formal work role"
+    - "Python proficiency growing rapidly via Job Agent + DataCamp"
+    - "Avaya/NICE IEX experience referenced in prior sessions — not on this resume"
