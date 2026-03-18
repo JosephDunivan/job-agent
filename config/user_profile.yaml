@@ -139,6 +139,63 @@ personas:
     resume_version: "resume_security_v1.md"
     status: "passive"   # activate when ready to search this lane
 
+  - id: "creative-technologist"
+    label: "Creative Technologist / Technical Producer / UX Designer"
+    onet_codes:
+      - "27-1024.00"  # Graphic Designers
+      - "27-1014.00"  # Special Effects Artists and Animators
+      - "15-1254.00"  # Web Developers (interactive)
+    target_roles:
+      - "Creative Technologist"
+      - "Technical Producer"
+      - "UX/UI Designer"
+      - "Motion Graphics Designer"
+      - "Interactive Developer"
+      - "3D Artist / Animator"
+      - "Multimedia Producer"
+      - "Design Engineer"
+    target_industries:
+      - "Entertainment"
+      - "Advertising / Marketing"
+      - "Healthcare (pharma marketing)"
+      - "Events / Experiential"
+      - "Technology"
+    work_arrangement: ["remote", "hybrid", "onsite"]
+    salary_range:
+      min: 80000
+      max: 145000
+      currency: "USD"
+    employment_type: ["W-2", "1099", "contract"]
+    resume_version: "resume_creative_v1.md"
+    status: "passive"
+
+  - id: "project-manager-bsa"
+    label: "Technical Project Manager / Business Systems Analyst"
+    onet_codes:
+      - "15-1299.09"  # IT Project Managers
+      - "15-1211.00"  # Computer Systems Analysts
+    target_roles:
+      - "Technical Project Manager"
+      - "IT Project Manager"
+      - "Business Systems Analyst"
+      - "Business Analyst"
+      - "Scrum Master"
+      - "Release Manager"
+      - "Process Improvement Analyst"
+    target_industries:
+      - "Entertainment"
+      - "Healthcare"
+      - "Technology"
+      - "Finance"
+    work_arrangement: ["onsite", "hybrid", "remote"]
+    salary_range:
+      min: 80000
+      max: 140000
+      currency: "USD"
+    employment_type: ["W-2"]
+    resume_version: "resume_pm_bsa_v1.md"
+    status: "passive"
+
   - id: "freelance-automation"
     label: "Freelance Automation / Integration Consultant"
     onet_codes:
@@ -531,6 +588,453 @@ skills:
       - "LLM ablation, token optimization, agent design, RAG, workflow orchestration"
       - "Rapidly growing through active projects"
 
+  # --- Design / Creative / Production ---
+  - name: "Adobe After Effects"
+    onet_category: "tech_skill"
+    onet_match: "Adobe After Effects"
+    proficiency: 4
+    years: 6
+    evidence:
+      - "Edgefactory — motion graphics, visual effects for Fortune 500 events"
+      - "APWA — animated keynote visuals, national anthem flag overlays"
+      - "Taurus Design Labs — reactive animations for Ascendis Pharma"
+
+  - name: "Adobe Premiere Pro"
+    onet_category: "tech_skill"
+    onet_match: "Adobe Systems Adobe Premiere Pro"
+    proficiency: 4
+    years: 6
+    evidence:
+      - "Santa Monica Seafood — multi-platform live content production"
+      - "Edgefactory — event video production"
+      - "APWA — keynote video production"
+
+  - name: "Blender 3D"
+    onet_category: "tech_skill"
+    onet_match: ~  # not in O*NET standard list
+    proficiency: 3
+    years: 4
+    evidence:
+      - "Edgefactory — 3D CGI wayfinding system with Google Maps API for 6,000-person conference"
+      - "APWA — 3D animated expo wayfinding with city buildings, streets, environmental data"
+
+  - name: "Adobe Illustrator"
+    onet_category: "tech_skill"
+    onet_match: "Adobe Illustrator"
+    proficiency: 3
+    years: 5
+    evidence:
+      - "Edgefactory — brochures, banners, digital signage, event displays"
+      - "Taurus Design Labs — client branding materials"
+
+  - name: "Adobe XD"
+    onet_category: "tech_skill"
+    onet_match: "Adobe Creative Cloud"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "Ascendis Pharma — interaction mock-ups, prototyping (influenced their customer-facing materials)"
+      - "Taurus Design Labs — interactive UI/UX design"
+
+  - name: "Figma"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Prototyping and wireframing (Dunivan-Tech-Resume-2024)"
+
+  - name: "Adobe Audition"
+    onet_category: "tech_skill"
+    onet_match: "Adobe Systems Adobe Audition"
+    proficiency: 3
+    years: 4
+    evidence:
+      - "APWA — enhanced audio for keynote testimonials"
+      - "Santa Monica Seafood — live event audio production"
+
+  - name: "Augmented Reality (AR) Development"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Edgefactory — AR photo experience using Snapchat geofencing + iPad network ($10K revenue generated)"
+
+  - name: "Rive Animations"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 2
+    years: 1
+    evidence:
+      - "FL Indian River Groves — engaging onboarding experience animations"
+
+  - name: "Webflow"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Taurus Design Labs — web design and development"
+
+  - name: "Graphic Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    years: 8
+    evidence:
+      - "LinkedIn services: Graphic Design"
+      - "Edgefactory — brochures, banners, digital signage, booth layouts, themed spaces"
+      - "Taurus Design Labs — client branding across verticals"
+
+  - name: "UX/UI Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    years: 4
+    evidence:
+      - "LinkedIn services: User Experience Design"
+      - "UX Design certifications (LinkedIn, 2019)"
+      - "Adobe XD prototyping for Ascendis Pharma"
+      - "User personas, user scenarios, interactive prototypes (Dunivan-Tech-Resume-2024)"
+
+  - name: "Motion Graphics & Visual Effects"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    years: 6
+    evidence:
+      - "After Effects + Blender across multiple roles"
+      - "Reactive animations, sliders, moving elements (Ascendis Pharma)"
+      - "Animated Polaroid-style visuals, national anthem flag overlays (APWA)"
+
+  - name: "Video Editing & Post-Production"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    years: 6
+    evidence:
+      - "Premiere Pro across all production roles"
+      - "Live streaming + VOD editing (APWA, Santa Monica Seafood)"
+
+  - name: "Live Streaming & Multi-Platform Distribution"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    years: 4
+    evidence:
+      - "Santa Monica Seafood — simultaneous Facebook/YouTube/Instagram streams"
+      - "APWA — YouTube + website live streaming (300% reach increase)"
+
+  - name: "Photo Styling & Content Direction"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    years: 4
+    evidence:
+      - "DRC-Resume — explicit skill listing"
+      - "Edgefactory — event visual direction for Fortune 500"
+
+  - name: "Creative Copywriting"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    years: 4
+    evidence:
+      - "DRC-Resume — explicit skill listing"
+      - "Promotional materials, digital signage content"
+
+  # --- Project Management / BSA ---
+  - name: "Project Management (Agile)"
+    onet_category: "skill"
+    onet_match: "Coordination"
+    proficiency: 4
+    years: 8
+    evidence:
+      - "Edgefactory — multi-million dollar Fortune 500 events, 60+ person teams, $1M+ budgets"
+      - "Taurus Design Labs — full client engagement lifecycle"
+      - "PMI member since 2015 (LinkedIn)"
+      - "CAPM credential (LinkedIn headline)"
+      - "IT PM (IBM) + PM (Google) certs, 2024"
+
+  - name: "Budget Management"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 4
+    years: 6
+    evidence:
+      - "Edgefactory — budgets exceeding $1M, vendor negotiations"
+      - "Engineered Excel-based financial tracking system (Edgefactory)"
+
+  - name: "Business Systems Analysis"
+    onet_category: "skill"
+    onet_match: "Systems Analysis"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Disney — BSA resume variant: UAT, defect documentation, root cause analysis"
+      - "Disney — deep system analysis mapping integration points and dependencies"
+      - "GSS-to-Skywalker project — workflow analysis, documentation, automation"
+
+  - name: "User Acceptance Testing (UAT)"
+    onet_category: "work_activity"
+    onet_match: "Evaluating Information to Determine Compliance with Standards"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "Disney — structured validation and testing practices"
+      - "GSS-to-Skywalker — iterative UAT against live production systems"
+
+  - name: "Stakeholder Communication"
+    onet_category: "skill"
+    onet_match: "Speaking"
+    proficiency: 4
+    years: 6
+    evidence:
+      - "Edgefactory — Fortune 500 client management (Genentech)"
+      - "Compass Health — executive stakeholder partnership"
+      - "Disney — regular reporting to leadership on incidents and process improvement"
+
+  - name: "Vendor Management & Negotiation"
+    onet_category: "skill"
+    onet_match: "Negotiation"
+    proficiency: 3
+    years: 4
+    evidence:
+      - "Edgefactory — A/V vendor negotiation, union labor coordination"
+      - "Taurus Design Labs — third-party vendor coordination"
+
+  - name: "Technical Documentation"
+    onet_category: "work_activity"
+    onet_match: "Documenting/Recording Information"
+    proficiency: 4
+    years: 5
+    evidence:
+      - "FL Indian River Groves — database schemas, API specs, architecture diagrams"
+      - "Disney — defect documentation, incident patterns, process improvement reports"
+      - "FixStop — user training materials"
+
+  - name: "ServiceNow"
+    onet_category: "tech_skill"
+    onet_match: "ServiceNow"
+    proficiency: 2
+    years: 1
+    evidence:
+      - "DRC-Telecom-Resume — ITSM tools listing"
+
+  - name: "Jira / Confluence"
+    onet_category: "tech_skill"
+    onet_match: "Atlassian JIRA"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "DRC-Telecom-Resume + DVC-BSA-Resume — ITSM tools"
+      - "Taurus Design Labs — project tracking"
+
+  - name: "Microsoft Power Platform (Power Automate, Power Apps, Power BI)"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft Power BI"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "DRC-Telecom + DVC-BSA resumes — explicit skill listing"
+      - "Taurus Design Labs — automated client reporting and operational workflows"
+
+  - name: "VBA / Office Macros (Excel, Access, Outlook)"
+    onet_category: "tech_skill"
+    onet_match: "Microsoft Visual Basic for Applications VBA"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "DRC-Telecom-Resume — scripting and automation"
+      - "Edgefactory — Excel-based financial tracking system"
+
+  # --- Contact Center / Disney-Specific ---
+  - name: "Contact Center Operations & Telephony"
+    onet_category: "knowledge"
+    onet_match: "Telecommunications"
+    proficiency: 3
+    years: 1
+    evidence:
+      - "Disney — eCommerce contact center, Cast systems (GSS, Skywalker)"
+      - "DRC-Telecom-Resume — telephony environment exposure"
+      - "Selected for accelerated telecom exposure at Disney"
+
+  - name: "DOM Manipulation / Browser Automation (Advanced)"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 4
+    years: 2
+    evidence:
+      - "Disney GSS-to-Skywalker — Shadow DOM traversal, async rendering, framework-aware value injection, clipboard fallback"
+      - "Built dual-mode bookmarklet in browser-restricted environment"
+      - "Estimated $3M-$10M annual labor cost reduction"
+
+  - name: "Node.js"
+    onet_category: "tech_skill"
+    onet_match: "Node.js"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "DRC-Telecom + DVC-BSA resumes — web development skill"
+
+  - name: "Jenkins"
+    onet_category: "tech_skill"
+    onet_match: "Jenkins CI"
+    proficiency: 2
+    years: 1
+    evidence:
+      - "DRC-Telecom-Resume — DevOps & CI/CD listing"
+
+  - name: "Stripe Payment Integration"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 2
+    years: 1
+    evidence:
+      - "FixStop — full-stack POS with Supabase, Twilio, and Stripe"
+
+  - name: "React Native / Expo"
+    onet_category: "tech_skill"
+    onet_match: "React"
+    proficiency: 3
+    years: 3
+    evidence:
+      - "Taurus Design Labs — cross-platform mobile apps (iOS & Android)"
+      - "FL Indian River Groves — rebuilt mobile app with Expo + React Native"
+      - "Charity Organization App — hundreds of thousands of users, OTA updates via EAS"
+
+  - name: "Tailwind CSS"
+    onet_category: "tech_skill"
+    onet_match: "Cascading style sheets CSS"
+    proficiency: 3
+    years: 2
+    evidence:
+      - "FL Indian River Groves — rapid prototyping and efficient UI development"
+
+  - name: "Storybook"
+    onet_category: "tech_skill"
+    onet_match: ~
+    proficiency: 2
+    years: 1
+    evidence:
+      - "Charity Organization App — scalable atomic design principles"
+
+  # --- O*NET Knowledge Areas (new from all resumes) ---
+  - name: "Design"
+    onet_category: "knowledge"
+    onet_match: "Design"
+    proficiency: 4
+    evidence:
+      - "Adobe Creative Suite across all production roles"
+      - "3D modeling, motion graphics, UX prototyping, graphic design"
+      - "Event set design, booth layouts, themed spaces"
+
+  - name: "Fine Arts"
+    onet_category: "knowledge"
+    onet_match: "Fine Arts"
+    proficiency: 3
+    evidence:
+      - "Creative direction, photo styling, visual composition"
+      - "Event aesthetic design, branded experiences"
+
+  - name: "Administration and Management"
+    onet_category: "knowledge"
+    onet_match: "Administration and Management"
+    proficiency: 3
+    evidence:
+      - "Founded and operates Taurus Design Labs"
+      - "Sales, marketing, accounting, client management"
+      - "$1M+ budget management at Edgefactory"
+
+  # --- Inferred Design Skills ---
+  # These are capabilities demonstrated through work evidence but not
+  # explicitly listed as skills on any resume. Inferred from project
+  # descriptions, deliverables, and role responsibilities.
+  #
+  # INFERENCE METHODOLOGY:
+  # 1. Reviewed all 5 resumes + LinkedIn for project deliverables
+  # 2. Identified capabilities required to produce those deliverables
+  # 3. Cross-referenced with O*NET work activities and knowledge areas
+  # 4. Assigned conservative proficiency based on evidence depth
+
+  - name: "Color Theory & Visual Hierarchy"
+    onet_category: "knowledge"
+    onet_match: "Fine Arts"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Designed branded event spaces, booth layouts, promotional materials, and interactive dashboards across multiple clients — all require color theory and visual hierarchy decisions"
+    evidence:
+      - "Edgefactory — themed event spaces aligned with client branding"
+      - "Ascendis Pharma — interactive dashboard design for expo kiosks"
+      - "Custom resume designs with strong visual hierarchy (all resume PDFs)"
+
+  - name: "Typography & Layout Design"
+    onet_category: "knowledge"
+    onet_match: "Fine Arts"
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "All 5 resume PDFs use custom typography, deliberate layout grids, and branded visual systems. Brochures, banners, and digital signage all require typographic decisions."
+    evidence:
+      - "Custom-designed resume template used across all variants"
+      - "Edgefactory — brochures, banners, digital signage"
+      - "APWA — keynote slide design with animated typography"
+
+  - name: "Interaction Design / Microinteractions"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Built reactive animations, sliders, and moving elements for pharma education app. Rive animations for onboarding. These require deliberate interaction design thinking."
+    evidence:
+      - "Ascendis Pharma — reactive animations, sliders, moving elements"
+      - "FL Indian River Groves — Rive animations for onboarding"
+      - "Angular animated kiosk applications"
+
+  - name: "Spatial / Environmental Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Designed booth layouts, themed event spaces, and 3D wayfinding systems for physical venues. Created custom fabric columns (70% cost reduction). This is environmental/spatial design."
+    evidence:
+      - "Edgefactory — booth layouts, interactive displays, themed event spaces"
+      - "Edgefactory — custom fabric column design (70% cost reduction vs. large format printing)"
+      - "APWA/Blender — 3D wayfinding integrating city buildings, streets, environmental data"
+
+  - name: "Brand Identity & Visual Systems"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Aligned event spaces with client branding objectives. Created customer-facing materials that influenced Ascendis Pharma's subsequent designs. Maintained consistent visual language across deliverables."
+    evidence:
+      - "Ascendis Pharma — prototypes influenced client's subsequent customer-facing materials"
+      - "Edgefactory — aligned themed spaces with client branding and event objectives"
+      - "Taurus Design Labs — consistent visual identity across all resume variants"
+
+  - name: "Storyboarding & Narrative Design"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Produced keynote presentations, multi-platform live events with narrative arcs, and educational product walkthroughs. All require storyboarding and narrative structure."
+    evidence:
+      - "APWA — opening keynote with animated Polaroid-style narrative"
+      - "Santa Monica Seafood — 60-minute live event structure"
+      - "Ascendis Pharma — TransCon Technology educational walkthrough"
+
+  - name: "A/V Engineering & Technical Integration"
+    onet_category: "skill"
+    onet_match: ~
+    proficiency: 3
+    inferred: true
+    inference_reasoning: "Managed power/network drops, coordinated A/V vendors, set up internal iPad networks, integrated printers/displays/machines for interactive experiences. This is live A/V systems engineering."
+    evidence:
+      - "Edgefactory — power management, network infrastructure, A/V vendor coordination"
+      - "Edgefactory — AR photo experience (iPad network + Snapchat geofencing + printers + display TVs)"
+      - "DRC-Resume — A/V and Theatrical Technologies (explicit skill)"
+
   # --- Emerging / Project-Based (not yet on resume) ---
   - name: "Kuzu Graph DB"
     onet_category: "tech_skill"
@@ -569,7 +1073,13 @@ experience:
     end: ~  # current
     type: "W-2"
     highlights:
-      - "Support contact center operations and technology systems within Disney's eCommerce division"
+      - "$3M-$10M projected annual labor impact: identified and automated Skywalker Transfer bottleneck — reduced process from minutes to under 10 seconds across ~2,000 advisors"
+      - "Built dual-mode bookmarklet in browser-restricted environment (Shadow DOM traversal, async rendering, framework-aware value injection, clipboard fallback)"
+      - "Emerging SME on Disney Cast systems (GSS, Skywalker) across Disney Vacation Club product lines"
+      - "Ranked top of training cohort — selected for accelerated exposure to technology and project management including telecom"
+      - "Conducts deep system analysis to map integration points, dependencies, and operational improvements"
+      - "Applies structured validation/testing practices, monitors system performance, documents defects and edge cases"
+      - "Manages confidential guest data (PII) across 60+ daily interactions in full compliance with Disney privacy standards"
 
   - title: "Software Engineer"
     company: "Florida Indian River Groves"
@@ -584,19 +1094,24 @@ experience:
       - "Implemented ODBC connections for real-time data source integration"
       - "Created comprehensive technical documentation — database schemas, API specs, architecture diagrams"
 
-  - title: "Software Engineer"
+  - title: "Founder & Software Engineer"
     company: "Taurus Design Labs"
     location: "Orlando, FL"
     start: "2017-01"
     end: ~  # ongoing
-    type: "W-2"
+    type: "self-employed"
     highlights:
+      - "Founded and grew technical consultancy delivering mobile apps, PWAs, and backend integrations across healthcare, nonprofit, and retail verticals"
+      - "Charity Organization App — React Native/Expo serving hundreds of thousands of users nationwide, OTA updates via EAS, Storybook atomic design, Twilio SMS integration"
+      - "FL Indian River Groves mobile rebuild — Expo + React Native, Tailwind CSS, Rive animations, Azure SQL API integration"
       - "Designed REST APIs with PHP backend integrated with Azure SQL and cloud services"
       - "Implemented Twilio API for SMS automation, webhooks, and event-driven messaging"
       - "Developed Angular progressive web apps with JavaScript/TypeScript for healthcare and nonprofit clients"
       - "Configured SSO solutions (OAuth 2.0/OpenID Connect) ensuring HIPAA compliance"
       - "Built interactive dashboards with jQuery, AJAX, JSON, XML for async data operations"
       - "Managed Azure App Services, SQL Databases, Blob Storage, and Active Directory"
+      - "Oversaw business operations: sales, marketing, client management, accounting"
+      - "Worked within highly regulated industries adhering to strict content/visual guidelines"
 
   - title: "DocuSign Developer"
     company: "Compass Health System"
@@ -610,7 +1125,18 @@ experience:
       - "Integrated DocuSign API with healthcare systems for HIPAA-compliant electronic signatures"
       - "Collaborated with executive stakeholders on workflow automation solutions"
 
-  - title: "Software Engineer"
+  - title: "IT Systems Developer & Specialist"
+    company: "FixStop"
+    location: "Orlando, FL"
+    start: "2024-01"
+    end: "2024-12"
+    type: "W-2"
+    highlights:
+      - "Delivered Tier 1-2 technical support across Windows, macOS, and Linux — 90%+ resolution within 10-30 min, 60+ daily interactions"
+      - "Architected full-stack automated POS and ticketing system using React.js, Supabase, Azure MySQL, Twilio, and Stripe"
+      - "Developed user training materials and provided SME guidance on system features and troubleshooting"
+
+  - title: "Technical Producer & Angular Developer"
     company: "AP Live & Ascendis Pharma"
     location: "Orlando, FL"
     start: "2020-03"
@@ -618,9 +1144,28 @@ experience:
     type: "1099"
     highlights:
       - "Developed interactive PWA focused on TransCon Technology education"
-      - "Built Angular animated application for expo kiosk use"
+      - "Built Angular animated application for expo kiosk use with reactive animations, sliders, moving elements"
+      - "Used Adobe XD for interaction mock-ups and prototyping — influenced Ascendis Pharma's subsequent customer-facing materials"
+      - "Collaborated with legal and scientific experts to ensure accurate and compliant content/visuals"
       - "Pivoted to 3D virtual expo platform during pandemic — maintained 90% engagement metrics"
       - "Built responsive HTML/CSS interfaces with service workers for offline capability"
+
+  - title: "Technical Project Manager"
+    company: "Edgefactory Omnimedia"
+    location: "Orlando, FL"
+    start: "2016-07"
+    end: "2019-12"
+    type: "W-2"
+    highlights:
+      - "Managed multi-million-dollar Fortune 500 productions (Genentech biooncology) — 3 hotels, 2 outdoor venues, 60+ person teams, $1M+ budgets"
+      - "Developed 3D animated CGI wayfinding system using Blender + Google Maps API for 6,000-person conference"
+      - "Directed full presidential keynote transformation from raw concepts to final production"
+      - "Engineered Excel-based financial tracking system for company-wide reporting"
+      - "Created on-site AR photo experience (Snapchat geofencing + iPad network + printers + display TVs) — generated $10K revenue"
+      - "Designed custom fabric columns for event displays — reduced costs 70% vs. traditional large format printing"
+      - "Designed booth layouts, interactive displays, themed event spaces aligned with client branding"
+      - "Produced promotional materials: brochures, banners, digital signage"
+      - "Negotiated with and managed A/V vendors worldwide for optimal pricing and quality"
 
   - title: "Producer"
     company: "American Public Works Association (PWX2021)"
@@ -630,7 +1175,9 @@ experience:
     type: "1099"
     highlights:
       - "Designed technical plan for 3-day conference — 6,000+ attendees, 20 breakout rooms, 100+ booths"
-      - "Produced opening keynote presentation for new APWA President"
+      - "Produced opening keynote with animated Polaroid-style visuals and enhanced audio"
+      - "Designed and animated 3D wayfinding video using Blender (city buildings, streets, environmental data)"
+      - "Produced national anthem videos for USA and Canada with animated flag overlays"
       - "Live streamed keynotes to YouTube/web — increased reach 300%"
 
   - title: "Technical Producer & Set Designer"
@@ -661,17 +1208,106 @@ education:
     institution: "Grow with Google on Coursera"
     year: 2024
 
+  - degree: "Continuous Professional Development"
+    institution: "Treehouse"
+    start: 2013
+    status: "ongoing"
+
+  - degree: "Brandon Hall Preparatory College"
+    institution: "Brandon Hall"
+    notes: "Practical and self-directed education equivalent to degree-level qualifications, with 8+ years applied experience"
+
 # -----------------------------------------------------------------------------
 # CERTIFICATIONS
 # -----------------------------------------------------------------------------
 
 certifications:
+  - name: "CAPM (Certified Associate in Project Management)"
+    issuer: "PMI"
+    notes: "Referenced in LinkedIn headline"
+  - name: "Cybersecurity Analyst"
+    issuer: "IBM / Coursera"
+    year: 2024
+  - name: "Version Control"
+    issuer: "Meta / Coursera"
+    year: 2024
+  - name: "Intermediate Python"
+    issuer: "DataCamp"
+    year: 2022
   - name: "HTML/CSS"
-    issuer: ~
+    issuer: "TestDome"
+    year: 2018
   - name: "XML Essential Training"
-    issuer: ~
+    issuer: "LinkedIn"
+    year: 2022
+  - name: "UX Design: Overview"
+    issuer: "LinkedIn"
+    year: 2019
+  - name: "UX Design: Analyzing User Data"
+    issuer: "LinkedIn"
+    year: 2019
+  - name: "Foundations of Programming: Software Quality Assurance"
+    issuer: "Lynda.com"
+    year: 2017
+  - name: "SEO Fundamentals"
+    issuer: "Lynda.com"
+    year: 2016
+  - name: "Logical Reasoning"
+    issuer: "TestDome"
+    year: 2021
+  - name: "Verbal Reasoning"
+    issuer: "TestDome"
+    year: 2021
   - name: "Integrated Data in Finance Apps with Dynamics 365"
     issuer: "Microsoft"
+  - name: "Notary Public (expired)"
+    issuer: "State of Florida"
+    year: 2016
+    expired: 2020
+
+# -----------------------------------------------------------------------------
+# META — Profile management
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# LANGUAGES
+# -----------------------------------------------------------------------------
+
+languages:
+  - language: "English"
+    proficiency: "native"
+  - language: "French"
+    proficiency: "elementary"
+  - language: "Spanish"
+    proficiency: "elementary"
+
+# -----------------------------------------------------------------------------
+# ORGANIZATIONS & AFFILIATIONS
+# -----------------------------------------------------------------------------
+
+organizations:
+  - name: "Project Management Institute (PMI)"
+    since: "2015-06"
+
+# -----------------------------------------------------------------------------
+# VOLUNTEER
+# -----------------------------------------------------------------------------
+
+volunteer:
+  - role: "Boarding Assistant"
+    organization: "North Collier Animal Clinic"
+    category: "Animal Welfare"
+
+# -----------------------------------------------------------------------------
+# FEATURED PROJECTS (from LinkedIn)
+# -----------------------------------------------------------------------------
+
+featured_projects:
+  - name: "SpeedRead"
+    dates: "2018-present"
+    description: "Rapid Serial Visual Presentation — increased reading speed from 60 wpm to 400+ wpm"
+  - name: "Generating Keywords for Search Campaigns"
+    description: "Python-based automatic keyword generation for search engine marketing campaigns"
 
 # -----------------------------------------------------------------------------
 # META — Profile management
@@ -680,9 +1316,20 @@ certifications:
 meta:
   created: "2026-03-17"
   last_updated: "2026-03-17"
-  source: "Parsed from DRC-Software-Resume-Dunivan.pdf + prior session context"
+  sources:
+    - "DRC-Software-Resume-Dunivan.pdf (original)"
+    - "DRC-Telecom-Resume-Dunivan.pdf (contact center / telecom variant)"
+    - "DRC-Resume-Dunivan.pdf (creative / design variant)"
+    - "DVC-BSA-Resume-Dunivan-3.pdf (business systems analyst variant)"
+    - "Dunivan-Tech-Resume-2024-4.pdf (comprehensive tech + creative portfolio)"
+    - "LinkedIn profile: linkedin.com/in/jdunivan/"
+    - "Prior session context (SOX audit, Avaya/NICE IEX, OpenClaw, Job Agent)"
   notes:
-    - "SOX audit experience from current Disney W-2 role not on this resume version"
+    - "SOX audit experience from current Disney W-2 role not on any resume version"
     - "Security research (OpenClaw) is project-based, not yet a formal work role"
     - "Python proficiency growing rapidly via Job Agent + DataCamp"
-    - "Avaya/NICE IEX experience referenced in prior sessions — not on this resume"
+    - "Avaya/NICE IEX experience referenced in prior sessions — not on any resume"
+    - "LinkedIn shows CAPM in headline — verify if certification is current"
+    - "PMI membership since 2015 — 11 years of PM ecosystem exposure"
+    - "7 personas total: 3 active, 4 passive — adjust status as search priorities shift"
+    - "Inferred design skills marked with 'inferred: true' flag — review for accuracy"
