@@ -183,22 +183,115 @@ has these. They add no signal and crowd out space for real skills.
 
 ## 5. Experience Framing Guidelines
 
-### The Formula
+### 5.1 The Rewrite System
 
-Replace: *"Responsible for X"*
-With: *"[Action verb] [what you built] that [outcome/impact]"*
+Every existing LinkedIn experience entry should go through four steps before it's
+published. Work through all your roles in one sitting so the tone is consistent.
 
-### Verb Selection by Role Type
+**Step 1 — Strip the passive voice**
 
-| For engineering/build work | For automation/AI work | For analysis/architecture work |
-|---------------------------|------------------------|-------------------------------|
-| Architected | Automated | Designed |
-| Built | Orchestrated | Evaluated |
-| Shipped | Integrated | Audited |
-| Refactored | Reduced | Mapped |
-| Deployed | Eliminated | Identified |
+Find every instance of: "responsible for", "worked on", "involved in", "assisted with",
+"helped to", "part of a team that". Delete and rewrite from scratch. These phrases
+signal that you were present, not that you drove anything.
 
-### Seniority Signals
+**Step 2 — Apply the formula**
+
+```
+[Strong verb] + [what you built/changed] + [why it mattered or what changed because of it]
+```
+
+The third element (the "so what") is what most people skip. It's also the difference
+between a bullet that reads like a task and one that reads like an achievement.
+
+**Step 3 — Add one concrete detail per bullet**
+
+Numbers, tool names, scale, or a specific constraint. "Built a REST API" is skippable.
+"Built a REST API in Python (FastAPI) that replaced a manual export process and
+eliminated a 45-minute daily bottleneck" is not.
+
+If you don't have a number, use a specific qualifier: "zero", "sub-second", "2-week
+turnaround", "without external dependencies". Precision signals credibility even
+without metrics.
+
+**Step 4 — Check keyword alignment per target lane**
+
+For each bullet, ask: does this contain at least one term that a recruiter in my
+target lane would search for? If the whole role has no AI/LLM terms and you're
+targeting AI tooling jobs, one bullet needs to be rewritten to surface that work
+even if it wasn't the primary focus.
+
+---
+
+### 5.2 Rewrite Examples
+
+**Software / Build Role**
+
+| Before | After |
+|--------|-------|
+| Responsible for developing new features for the web application | Built and shipped a real-time job-matching dashboard in Next.js — reduced time-to-insight from daily batch exports to sub-second live updates |
+| Worked on backend API development | Designed Python REST API (FastAPI) serving 5+ front-end consumers; established versioning conventions adopted across 3 other team services |
+| Helped with database migration | Led SQLite → PostgreSQL migration; redesigned schema to support multi-tenant queries, cutting P95 read latency from 800ms to 120ms |
+| Responsible for code reviews | Introduced structured code review checklist covering security, test coverage, and API contract stability — reduced post-merge bugs by ~40% over 6 months |
+
+**Automation / AI Work**
+
+| Before | After |
+|--------|-------|
+| Worked on automation scripts | Automated a 4-step manual reporting pipeline using Python + n8n; eliminated 6 hours/week of manual work across 3 analysts |
+| Involved in integrating LLM features | Integrated Ollama-backed LLM into resume tailoring pipeline; built LLM-as-judge eval harness that scores output quality before delivery — zero hallucinated credentials in production |
+| Responsible for prompt engineering | Designed and versioned 12 prompt templates for cover letter, skill gap, and resume bullet rewriting; built regression test suite so prompt changes are validated before deploy |
+| Helped build an AI agent | Built a LangGraph multi-step agent for job pipeline management — discover → score → tailor → track — replacing a 3-tool manual workflow with a single orchestrated run |
+
+**Compliance / Audit Role**
+
+| Before | After |
+|--------|-------|
+| Responsible for SOX compliance work | Audited financial controls across 8 business units for SOX compliance; documented findings in structured evidence packages that reduced external auditor review time by 30% |
+| Worked on audit documentation | Designed evidence capture templates that standardized audit trail format across the team — adopted as org-wide standard in the following audit cycle |
+| Involved in process improvement | Identified 3 manual data reconciliation processes susceptible to SOX control failure; proposed automated checks that were implemented and passed the next external audit without findings |
+
+---
+
+### 5.3 Role Description Format
+
+Each LinkedIn experience entry has two parts: the **role summary** (1–2 sentences, shown
+above the bullets) and the **bullet list** (4–6 bullets max per role).
+
+**Role summary formula:**
+> What kind of company/context + what your scope of ownership was + one signal of scale or impact.
+
+Example:
+> Full-stack engineer at [Company], owning the automation and reporting platform end-to-end.
+> Primary technical contributor on a 4-person team serving 50+ internal analysts.
+
+**Bullets (4–6, ordered by relevance to your current target lane):**
+- Lead with your strongest, most-relevant bullet — not the one from earliest in the role
+- Put AI/LLM bullets first if targeting AI tooling jobs; put front-end bullets first if
+  targeting UI/UX-forward roles
+- Cut anything that doesn't differentiate — if every engineer at that company would say
+  the same thing, it doesn't belong
+
+**Length per bullet:** One sentence, occasionally two. If it needs three sentences it's
+a paragraph, not a bullet. Compress it.
+
+---
+
+### 5.4 Per-Entry Audit Checklist
+
+Run each existing experience entry through this before publishing:
+
+- [ ] No "responsible for", "worked on", "involved in", or "helped with"
+- [ ] Every bullet starts with a strong past-tense action verb
+- [ ] At least one bullet contains a concrete number, scale, or specific tool name
+- [ ] At least one bullet explains *why* the work mattered or what changed
+- [ ] Bullets are ordered with the strongest/most-relevant one first
+- [ ] At least one keyword per target lane appears somewhere in the entry
+- [ ] Role summary is present and includes scope/scale context
+- [ ] Entry is under ~2,000 characters total (LinkedIn truncates above this)
+
+---
+
+### 5.5 Seniority Signals
 
 Junior engineers describe what they did. Senior engineers describe **why** and **what
 changed because of it**. To signal seniority:
@@ -210,8 +303,27 @@ changed because of it**. To signal seniority:
   orchestration; chose flexible multi-tool approach to avoid vendor lock-in"*
 - Mention quality gates: *"Built LLM-as-judge evaluation harness; zero hallucinated
   credentials in tailored resumes across 500 test runs"*
+- Show initiative at boundaries: *"Identified that our resume parsing module had no
+  test coverage for edge-case JD formats; wrote 40 fixture tests before touching the
+  code — caught 3 regressions on the first run"*
 
-### The Job-Agent Project as Portfolio Evidence
+---
+
+### 5.6 Verb Selection by Role Type
+
+| For engineering/build work | For automation/AI work | For analysis/architecture work |
+|---------------------------|------------------------|-------------------------------|
+| Architected | Automated | Designed |
+| Built | Orchestrated | Evaluated |
+| Shipped | Integrated | Audited |
+| Refactored | Reduced | Mapped |
+| Deployed | Eliminated | Identified |
+| Migrated | Instrumented | Established |
+| Modernized | Versioned | Standardized |
+
+---
+
+### 5.7 The Job-Agent Project as Portfolio Evidence
 
 Even in early phase, the project is citable. Frame it as:
 
@@ -225,7 +337,7 @@ Even in early phase, the project is citable. Frame it as:
 > Kuzu (graph DB), SQLite, Docker
 
 Update this entry as modules ship with specific metrics (e.g., match score accuracy,
-tailoring time reduction).
+tailoring time reduction, number of test fixtures covering LLM output quality).
 
 ---
 
