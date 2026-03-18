@@ -659,7 +659,7 @@ skills:
     proficiency: 2
     years: 1
     evidence:
-      - "Edgefactory — early adoption of Snapchat's beta geofencing feature; built full experiential pipeline midafternoon-to-evening: geofenced capture → iPad iCloud auto-sync → vendor display on multiple TVs → printing service at restaurant venue days later ($10K revenue)"
+      - "Edgefactory — discovered Snapchat geofencing while still in beta (unknown outside developer circles); built first-of-its-kind experiential pipeline in hours: geofenced capture → iPad iCloud auto-sync → vendor TV display → multi-venue printing service across days ($10K revenue, zero playbook)"
 
   - name: "Rive Animations"
     onet_category: "tech_skill"
@@ -1032,7 +1032,7 @@ skills:
     inference_reasoning: "Managed power/network drops, coordinated A/V vendors, set up internal iPad networks, integrated printers/displays/machines for interactive experiences. This is live A/V systems engineering."
     evidence:
       - "Edgefactory — power management, network infrastructure, A/V vendor coordination"
-      - "Edgefactory — Snapchat beta geofence → iPad iCloud auto-sync → vendor TV display → multi-venue printing service (6 systems, zero prep)"
+      - "Edgefactory — discovered Snapchat beta geofencing (unknown outside dev circles) and built 6-system experiential pipeline in hours with zero playbook"
       - "DRC-Resume — A/V and Theatrical Technologies (explicit skill)"
 
   # --- Inferred Business & Entrepreneurial Skills ---
@@ -1628,7 +1628,7 @@ experience:
       - "Developed 3D animated CGI wayfinding system using Blender + Google Maps API for 6,000-person conference"
       - "Directed full presidential keynote transformation from raw concepts to final production"
       - "Engineered Excel-based financial tracking system for company-wide reporting"
-      - "Created on-site AR photo experience (Snapchat geofencing + iPad network + printers + display TVs) — generated $10K revenue"
+      - "Discovered Snapchat geofencing in beta (pre-concept, unknown in events industry) and built first-of-its-kind experiential pipeline in hours: geofenced capture → iPad iCloud auto-sync → real-time TV gallery → multi-venue printing service — $10K revenue, zero playbook"
       - "Designed custom fabric columns for event displays — reduced costs 70% vs. traditional large format printing"
       - "Designed booth layouts, interactive displays, themed event spaces aligned with client branding"
       - "Produced promotional materials: brochures, banners, digital signage"
